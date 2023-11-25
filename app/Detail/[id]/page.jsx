@@ -1,5 +1,5 @@
 import DetailContainer from "@/container/DetailContainer"
-import { getAllData } from "@/utils/helpers/Datafetcher"
+import { getAllData } from "@/utils/functions/Datafetcher"
 // import carsData from "@/mocks/cars.json"
 
 const page = async ({ params }) => {

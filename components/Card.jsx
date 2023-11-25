@@ -1,7 +1,7 @@
 "use client"
 import Link from "next/link";
 import { useState, useEffect } from "react";
-import { setSavedCars, savedStatus } from "@/utils/helpers/Datafetcher";
+import { setSavedCars, savedStatus } from "@/utils/functions/Datafetcher";
 import { MdFavorite, MdFavoriteBorder } from "react-icons/md";
 import { auth } from "@/utils/Firebase";
 

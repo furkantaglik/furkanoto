@@ -1,6 +1,6 @@
 "use client"
 import { useState, useEffect } from 'react';
-import { addHighlightsData, deleteHighlightsData, updateHighlightsData, getHighlightsData } from '@/utils/helpers/Datafetcher';
+import { addHighlightsData, deleteHighlightsData, updateHighlightsData, getHighlightsData } from '@/utils/functions/Datafetcher';
 
 const initialFormState = {
     title: '',

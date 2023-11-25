@@ -1,7 +1,7 @@
 "use client"
 import { AiOutlineArrowRight, AiOutlineArrowLeft } from "react-icons/ai";
 import { useEffect, useRef, useState } from "react";
-import { getHighlightsData } from "@/utils/helpers/Datafetcher";
+import { getHighlightsData } from "@/utils/functions/Datafetcher";
 import Link from "next/link";
 
 const Slider = () => {

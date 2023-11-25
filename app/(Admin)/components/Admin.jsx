@@ -1,6 +1,6 @@
 "use client"
 import { useState, useEffect } from 'react';
-import { addData, deleteData, updateData, getAllData, formatDate } from '@/utils/helpers/Datafetcher'
+import { addData, deleteData, updateData, getAllData, formatDate } from '@/utils/functions/Datafetcher'
 
 const initialFormState = {
     brand: 'Mercedes',
