@@ -1,7 +1,6 @@
 "use client"
 import SavedContainer from '@/container/SavedContainer';
 import { getSavedCars, } from '@/utils/functions/Datafetcher';
-import { onAuthStateChanged } from 'firebase/auth';
 import { auth } from '@/utils/Firebase';
 import { useEffect, useState } from 'react';
 

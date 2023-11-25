@@ -1,7 +1,7 @@
 "use client"
 import { AiOutlineArrowRight, AiOutlineArrowLeft } from "react-icons/ai";
 import { useEffect, useRef, useState } from "react";
-import { getHighlightsData } from "@/utils/functions/Datafetcher";
+import { getAllHighlights } from "@/utils/functions/Datafetcher";
 import Link from "next/link";
 
 const Slider = () => {
@@ -9,7 +9,7 @@ const Slider = () => {
 
     useEffect(() => {
         const fetchData = async () => {
-            const data = await getHighlightsData();
+            const data = await getAllHighlights();
             setHighlights(data);
         };
 

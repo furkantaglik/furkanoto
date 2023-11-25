@@ -1,8 +1,8 @@
 import HomeContainer from "@/container/HomeContainer";
-import { getAllData } from "@/utils/functions/Datafetcher";
+import { getAllCars } from "@/utils/functions/Datafetcher";
 
 export default async function Home() {
-  const carsData = await getAllData();
+  const carsData = await getAllCars();
 
   return (
     <>

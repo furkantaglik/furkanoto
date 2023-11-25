@@ -3,7 +3,7 @@ import { GiHamburgerMenu } from "react-icons/gi"
 import { AiOutlineCloseCircle } from "react-icons/ai"
 import { BiSolidCategory } from "react-icons/bi"
 import SearchBar from './SearchBar'
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import Accordion from "./Accordion"
 
 const Sidebar = ({ filters, setFilters }) => {

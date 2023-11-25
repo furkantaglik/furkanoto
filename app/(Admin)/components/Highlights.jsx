@@ -1,6 +1,7 @@
 "use client"
 import { useState, useEffect } from 'react';
-import { addHighlightsData, deleteHighlightsData, updateHighlightsData, getHighlightsData } from '@/utils/functions/Datafetcher';
+import { addHighlight, deleteHighlight, updateHighlight, getAllHighlights } from '@/utils/functions/Datafetcher';
+import Link from 'next/link';
 
 const initialFormState = {
     title: '',
@@ -16,7 +17,7 @@ const Highlights = () => {
 
     useEffect(() => {
         async function fetchData() {
-            const data = await getHighlightsData();
+            const data = await getAllHighlights();
             setHighlightsData(data);
         }
         fetchData();
@@ -39,7 +40,11 @@ const Highlights = () => {
 
 
     return (
-        <section className=' max-w-screen-2xl mx-auto'>
+        <section className=' max-w-screen-xl mx-auto'>
+            <Link href="/Dashboard"
+                className='p-2 flex w-fit font-semibold md:float-right border-b-2 hover:border-black '>
+                Dashboard'a Git
+            </Link>
             {/* Durum mesajı */}
 
             {message && (
@@ -54,18 +59,18 @@ const Highlights = () => {
 
             <div className='grid grid-cols-3 mx-auto md:w-2/3 gap-x-5 gap-y-5 lg:gap-y-0 p-3 my-10 bg-gray-300 rounded-lg font-bold'>
                 <button
-                    onClick={() => addHighlightsData(formData, setMessage)}
-                    className=' py-3 bg-black text-white'>
+                    onClick={() => addHighlight(formData, setMessage)}
+                    className=' py-3   bg-black text-gray-300 hover:text-white'>
                     EKLE
                 </button>
                 <button
-                    onClick={() => deleteHighlightsData(formData, setMessage)}
-                    className=' py-3   bg-black text-white'>
+                    onClick={() => deleteHighlight(formData, setMessage)}
+                    className=' py-3   bg-black text-gray-300 hover:text-white'>
                     SİL
                 </button>
                 <button
-                    onClick={() => updateHighlightsData(formData, setMessage)}
-                    className=' py-3   bg-black text-white'>
+                    onClick={() => updateHighlight(formData, setMessage)}
+                    className=' py-3   bg-black text-gray-300 hover:text-white'>
                     GÜNCELLE
                 </button>
             </div>

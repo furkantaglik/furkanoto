@@ -1,56 +1,9 @@
 import { collection, doc, getDocs, updateDoc, addDoc, deleteDoc, Timestamp, query, where, getDoc, setDoc } from "firebase/firestore";
 import { db } from "../Firebase";
-// import carsData from "@/mocks/cars.json"
+import carsData from "@/mocks/cars.json"
+import highData from "@/mocks/highlights"
 
-
-//ana fonksiiyonlar
-export async function getAllData() {    
-    try {
-        const collectionRef = collection(db, "cars");
-        const querySnapshot = await getDocs(collectionRef);
-        const carsData = querySnapshot.docs.map((doc) => ({
-            id: doc.id,
-            ...doc.data()
-        }));
-
-        return carsData;
-
-    } catch (error) {
-        console.log(error);
-    }
-
-}
-export async function getHighlightsData() {
-    try {
-        const collectionRef = collection(db, "highlights");
-        const querySnapshot = await getDocs(collectionRef);
-        const highData = querySnapshot.docs.map((doc) => ({
-            id: doc.id,
-            ...doc.data()
-        }));
-
-        return highData;
-
-    } catch (error) {
-        console.log(error);
-    }
-
-}
-export async function getSearchResults(searchValue) {
-    try {
-        const carsData = await getAllData();
-        const filteredData = carsData.filter((car) => {
-            const brandIncludesSearchValue = car.brand.trim().toLocaleLowerCase('tr').includes(searchValue.trim().toLocaleLowerCase('tr'));
-            const modelIncludesSearchValue = car.model.trim().toLocaleLowerCase('tr').includes(searchValue.trim().toLocaleLowerCase('tr'));
-
-            return searchValue.length >= 2 && (brandIncludesSearchValue || modelIncludesSearchValue);
-        });
-
-        return filteredData;
-    } catch (error) {
-        setMessage("Bir Hata Oluştu");
-    }
-}
+// kaydetme işlemleri
 export async function getSavedCars(userId) {
     try {
         const savedCollectionRef = collection(db, 'saved');
@@ -58,22 +11,15 @@ export async function getSavedCars(userId) {
         const savedSnapshot = await getDocs(savedQuery);
         const carIds = savedSnapshot.docs.map((doc) => doc.data().carId);
 
-        console.log(carIds);
-        console.log(await getAllData())
-
-        const carsData = await getAllData();
-
+        const carsData = await getAllCars();
         const savedCars = carsData.filter((car) => carIds.some((id) => id.includes(car.id)));
-        // const savedCars = (await getAllData()).filter((car) => carIds[car].includes(car.id));
-        console.log(savedCars)
-
         return savedCars;
     } catch (error) {
-        console.error('hata:', error);
+        console.error(error);
         throw error;
     }
 }
-export async function setSavedCars(userId, carId) {
+export async function setSavedCar(userId, carId) {
     const savedCollectionRef = collection(db, 'saved');
 
     const savedDocRef = doc(savedCollectionRef, `${userId}_${carId}`);
@@ -97,14 +43,44 @@ export async function savedStatus(userId, carId) {
 
         return savedSnapshot.size > 0;
     } catch (error) {
-        console.error('Hata:', error);
+        console.error(error);
         throw error;
     }
 }
 
+// araç işlemleri
+export async function getAllCars() {
+    try {
+        // const collectionRef = collection(db, "cars");
+        // const querySnapshot = await getDocs(collectionRef);
+        // const carsData = querySnapshot.docs.map((doc) => ({
+        //     id: doc.id,
+        //     ...doc.data()
+        // }));
 
-// admin işlemleri
-export async function addData(formData, setMessage) {
+        return carsData;
+
+    } catch (error) {
+        console.log(error);
+    }
+
+}
+export async function getSearchResults(searchValue) {
+    try {
+        const carsData = await getAllCars();
+        const filteredData = carsData.filter((car) => {
+            const brandIncludesSearchValue = car.brand.trim().toLocaleLowerCase('tr').includes(searchValue.trim().toLocaleLowerCase('tr'));
+            const modelIncludesSearchValue = car.model.trim().toLocaleLowerCase('tr').includes(searchValue.trim().toLocaleLowerCase('tr'));
+
+            return searchValue.length >= 2 && (brandIncludesSearchValue || modelIncludesSearchValue);
+        });
+
+        return filteredData;
+    } catch (error) {
+        setMessage("Bir Hata Oluştu");
+    }
+}
+export async function addCar(formData, setMessage) {
     try {
         const { id, created_at, updated_at, ...remainingData } = formData;
         remainingData.created_at = Timestamp.now()
@@ -112,67 +88,79 @@ export async function addData(formData, setMessage) {
         const docRef = collection(db, "cars")
         await addDoc(docRef, remainingData)
 
-        setMessage("Veri başarıyla eklendi");
+        setMessage("Araç eklendi");
     } catch (error) {
-        setMessage("Veri eklenirken bir hata oluştu: " + error.message);
+        setMessage("Araç eklenirken bir hata oluştu: " + error.message);
     }
 }
-
-export async function deleteData(formData, setMessage) {
+export async function deleteCar(formData, setMessage) {
     try {
         const docRef = doc(db, "cars", formData.id);
         await deleteDoc(docRef, formData);
 
-        setMessage("Veri başarıyla Silindi.");
+        setMessage("Araç Silindi.");
     } catch (error) {
-        setMessage("Veri silinirken bir hata oluştu: " + error.message);
+        setMessage("Araç silinirken bir hata oluştu: " + error.message);
     }
 }
-
-export async function updateData(formData, setMessage) {
+export async function updateCar(formData, setMessage) {
     try {
         formData.updated_at = Timestamp.now();
         const docRef = doc(db, "cars", formData.id);
         await updateDoc(docRef, formData);
 
-        setMessage("Veri başarıyla güncellendi.");
+        setMessage("Araç güncellendi.");
     } catch (error) {
-        setMessage("Veri güncellenirken bir hata oluştu: " + error.message);
+        setMessage("Araç güncellenirken bir hata oluştu: " + error.message);
     }
 }
 
-// admin Öne çıkanlar
-export async function addHighlightsData(formData, setMessage) {
+//  Öne çıkanlar
+export async function getAllHighlights() {
+    try {
+        // const collectionRef = collection(db, "highlights");
+        // const querySnapshot = await getDocs(collectionRef);
+        // const highData = querySnapshot.docs.map((doc) => ({
+        //     id: doc.id,
+        //     ...doc.data()
+        // }));
+
+        return highData;
+
+    } catch (error) {
+        console.log(error);
+    }
+
+}
+export async function addHighlight(formData, setMessage) {
     try {
         const { id, ...remainingData } = formData;
         const docRef = collection(db, "highlights")
         await addDoc(docRef, remainingData)
 
-        setMessage("Veri başarıyla eklendi");
+        setMessage("Öne çıkarılanlara eklendi");
     } catch (error) {
-        setMessage("Veri eklenirken bir hata oluştu: " + error.message);
+        setMessage("Öne çıkarılanlara eklenirken bir hata oluştu: " + error.message);
     }
 }
-
-export async function deleteHighlightsData(formData, setMessage) {
+export async function deleteHighlight(formData, setMessage) {
     try {
         const docRef = doc(db, "highlights", formData.id);
         await deleteDoc(docRef, formData);
 
-        setMessage("Veri başarıyla Silindi.");
+        setMessage("Öne çıkarılanlardan Silindi.");
     } catch (error) {
-        setMessage("Veri silinirken bir hata oluştu: " + error.message);
+        setMessage("Öne çıkarılanlardan silinirken bir hata oluştu: " + error.message);
     }
 }
-
-export async function updateHighlightsData(formData, setMessage) {
+export async function updateHighlight(formData, setMessage) {
     try {
         const docRef = doc(db, "highlights", formData.id);
         await updateDoc(docRef, formData);
 
-        setMessage("Veri başarıyla güncellendi.");
+        setMessage("Öne çıkarılan güncellendi.");
     } catch (error) {
-        setMessage("Veri güncellenirken bir hata oluştu: " + error.message);
+        setMessage("Öne çıkarılan güncellenirken bir hata oluştu: " + error.message);
     }
 }
 

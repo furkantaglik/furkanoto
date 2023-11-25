@@ -1,6 +1,7 @@
 "use client"
 import { useState, useEffect } from 'react';
-import { addData, deleteData, updateData, getAllData, formatDate } from '@/utils/functions/Datafetcher'
+import { addCar, deleteCar, updateCar, getAllCars, formatDate } from '@/utils/functions/Datafetcher'
+import Link from 'next/link';
 
 const initialFormState = {
     brand: 'Mercedes',
@@ -27,7 +28,7 @@ const Admin = () => {
     // Veriler çekilir ve izlenir
     useEffect(() => {
         async function fetchData() {
-            const data = await getAllData();
+            const data = await getAllCars();
             setCarsData(data);
         }
         fetchData();
@@ -50,6 +51,10 @@ const Admin = () => {
 
     return (
         <section className='max-w-screen-xl mx-auto'>
+            <Link href="/Highlights"
+                className='p-2 flex w-fit font-semibold md:float-right border-b-2 hover:border-black '>
+                Öne Çıkanlara Git
+            </Link>
             {/* Durum mesajı */}
 
             {message && (
@@ -64,18 +69,18 @@ const Admin = () => {
 
             <div className='grid grid-cols-2 md:grid-cols-3 mx-auto md:w-2/3 gap-x-5 gap-y-5 lg:gap-y-0 p-3 my-10 bg-gray-300 rounded-lg font-bold'>
                 <button
-                    onClick={() => addData(formData, setMessage)}
-                    className=' py-3  text-green-600 hover:text-green-500 bg-black'>
+                    onClick={() => addCar(formData, setMessage)}
+                    className=' py-3   bg-black text-gray-300 hover:text-white'>
                     EKLE
                 </button>
                 <button
-                    onClick={() => deleteData(formData, setMessage)}
-                    className=' py-3  text-red-600 hover:text-red-500 bg-black'>
+                    onClick={() => deleteCar(formData, setMessage)}
+                    className=' py-3   bg-black text-gray-300 hover:text-white'>
                     SİL
                 </button>
                 <button
-                    onClick={() => updateData(formData, setMessage)}
-                    className=' py-3  text-cyan-600 hover:text-cyan-500 bg-black'>
+                    onClick={() => updateCar(formData, setMessage)}
+                    className=' py-3   bg-black text-gray-300 hover:text-white'>
                     GÜNCELLE
                 </button>
 
