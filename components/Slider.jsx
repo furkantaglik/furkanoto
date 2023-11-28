@@ -44,8 +44,8 @@ const Slider = () => {
             <div className="relative md:mx-20 mx-2">
                 <h1 className='md:text-3xl text-xl font-bold md:my-12 my-8 border-b-4 border-blue-500'>Öne Çıkanlar</h1>
                 <div className="flex md:overflow-hidden overflow-y-auto md:gap-x-5 gap-x-2 pb-3" style={{ display: "flex" }} ref={contentRef}>
-                    {highlights.map((high) => (
-                        <div key={high.id} className="flex-shrink-0 md:w-1/3 w-1/2">
+                    {highlights.map((high,index) => (
+                        <div key={index+1} className="flex-shrink-0 md:w-1/3 w-1/2">
                             <img src={high.image} alt={high.title} />
                             <div className='border-4 md:p-3 p-1'>
                                 <h1 className='text-xl font-bold mb-2'>{high.title}</h1>
@@ -76,7 +76,7 @@ const Slider = () => {
                 <div className="hidden md:block justify-center mt-4">
                     {highlights.map((high, index) => (
                         <button
-                            key={high.id}
+                            key={index + 1}
                             onClick={() => previewImage(index)}
                             className={`w-10 rounded-full mx-2  ${index === currentImageIndex ? 'scale-125' : 'bg-gray-300'}`}
                         >

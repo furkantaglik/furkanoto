@@ -1,7 +1,7 @@
 "use client"
 import Link from "next/link";
 import { useState, useEffect } from "react";
-import { setSavedCars, savedStatus } from "@/utils/functions/Datafetcher";
+import { setSavedCar, savedStatus } from "@/utils/functions/Datafetcher";
 import { MdFavorite, MdFavoriteBorder } from "react-icons/md";
 import { auth } from "@/utils/Firebase";
 
@@ -30,7 +30,7 @@ const Card = ({ id, marka, model, yakit, fiyat, resim1, resim2, resim3 }) => {
       const user = auth.currentUser;
       
       if (user) {
-        await setSavedCars(user.uid, id);
+        await setSavedCar(user.uid, id);
         setIsSaved(!isSaved);
       }
     } catch (error) {
