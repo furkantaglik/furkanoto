@@ -4,6 +4,7 @@ const Banner = () => {
   return (
     <section className="max-w-screen-2xl mx-auto relative ">
       <img
+      className="w-full h-full"
         src="https://www.mercedes-benz.com.tr/content/turkey/tr/passengercars/_jcr_content/root/responsivegrid/simple_stage_1564354.component.damq5.3375582587408.jpg/mercedes-benz-glc-coupe-c254-stage-finance-leasing-3840x1707-04-2023.jpg"
         alt=""
       />
