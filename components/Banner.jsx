@@ -1,5 +1,5 @@
 "use client"
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 
 const banners = [
@@ -21,25 +21,16 @@ const banners = [
 ];
 
 const Banner = () => {
-  const [currentBannerIndex, setCurrentBannerIndex] = useState(0);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentBannerIndex((prevIndex) => (prevIndex + 1) % banners.length);
-    }, 5000);
-
-    return () => clearInterval(interval); 
-
-  }, [currentBannerIndex]);
-
-  const currentBanner = banners[currentBannerIndex];
-
   return (
     <section className="max-w-screen-2xl mx-auto relative ">
-      <img className="w-full h-full" src={currentBanner.image} alt="" />
+      <video muted autoPlay loop>
+        <source src="/videos/banner.mp4" type="video/mp4" />
+        Tarayıcınız video etiketini desteklemiyor.
+      </video>
+
       <div className="absolute md:top-40 top-5 md:left-10 left-5 text-white font-bold z-10">
-        <h1 className="md:text-5xl text-lg font-serif md:mb-10 text-blue-500">{currentBanner.bannerTitle}</h1>
-        <p className="md:text-lg text-sm text-neutral-300 md:mb-16 mb-8">{currentBanner.bannerSlogan}</p>
+        <h1 className="md:text-5xl text-lg font-serif md:mb-10 text-blue-500">Yeni E Serisi</h1>
+        <p className="md:text-lg text-sm text-neutral-300 md:mb-16 mb-8">Senin Yansıman !</p>
         <Link href="/test" className="bg-blue-600 hover:bg-blue-700 md:px-10 px-5 py-1">
           Keşfedin
         </Link>
