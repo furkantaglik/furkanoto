@@ -30,7 +30,7 @@ const SearchBar = () => {
                     {results.map((result, index) => (
                         <Link key={index}
                             href={`/Detail/${result.id}`} onClick={() => { setResults([]) }}>
-                            <li className="p-1 flex text-black hover:bg-gray-200 bg-gray-300 w-[400px] items-center border-b">
+                            <li className="p-1 flex text-white bg-gradient-to-r from-black to-slate-950 hover:bg-gradient-to-r hover:from-black hover:to-blue-950 w-[400px] items-center">
                                 <div className="w-[100px] relative">
                                     <img
                                         className="rounded-md"

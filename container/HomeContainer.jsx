@@ -47,6 +47,10 @@ const HomeContainer = ({ homeinfo }) => {
     <section>
       <Banner />
       <Slider />
+      <div className=" max-w-screen-xl mx-auto mb-8">
+        <h1 className='md:text-3xl text-xl font-bold'>Araçlar</h1>
+        <p className=" border-b-4 border-blue-500 text-lg">{filteredCars.length} sonuç Bulundu</p>
+      </div>
       <div className="flex max-w-screen-2xl mx-auto w-full mb-8">
         <Sidebar filters={filters} setFilters={setFilters} />
         <Maincars carsinfo={filteredCars} />

@@ -84,7 +84,6 @@ const Slider = () => {
                         </button>
                     ))}
                 </div>
-                <h1 className='md:text-3xl text-xl font-bold md:my-12 my-8 border-b-4 border-blue-500'>Araçlar</h1>
             </div>
         </section>
     );
