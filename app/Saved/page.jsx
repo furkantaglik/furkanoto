@@ -13,7 +13,7 @@ const Page = () => {
                 const cars = await getSavedCars(user.uid);
                 setSavedCars(cars);
             } catch (error) {
-               
+
             }
         };
 
