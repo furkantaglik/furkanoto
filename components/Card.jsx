@@ -54,7 +54,7 @@ const Card = ({ id, marka, model, yakit, fiyat, resim1, resim2, resim3 }) => {
       <Link href={`Detail/${id}`}>
         <img src={image} alt="" className="w-[400px] md:h-[200px] h-[120px]" />
       </Link>
-      <div className="border-b-4 border-black text-center pt-2 md:opacity-0 group-hover:opacity-100 transition duration-100">
+      <div className=" text-center pt-2 md:opacity-0 group-hover:opacity-100 transition duration-100">
         <div className="flex justify-center items-center gap-x-5 mb-2">
           <button onClick={() => setImage(resim1)}
             className={`px-2 py-1 rounded-full ${image === resim1 ? "bg-blue-700" : "bg-gray-700"}`}
@@ -66,7 +66,7 @@ const Card = ({ id, marka, model, yakit, fiyat, resim1, resim2, resim3 }) => {
             className={`px-2 py-1 rounded-full ${image === resim3 ? "bg-blue-700" : "bg-gray-700"}`}
           ></button>
         </div>
-        <h2 className="font-medium ">{fiyat} TL</h2>
+        <h2 className="font-medium px-6 bg-slate-900 text-white w-fit mx-auto rounded-b-full">{fiyat} ₺</h2>
       </div>
     </section>
   )

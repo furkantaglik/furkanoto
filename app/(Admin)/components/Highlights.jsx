@@ -40,16 +40,15 @@ const Highlights = () => {
 
 
     return (
-        <section className=' max-w-screen-xl mx-auto'>
+        <section className=' max-w-screen-xl mx-auto md:mt-16 mb-20'>
             <Link href="/Dashboard"
                 className='p-2 flex w-fit font-semibold md:float-right border-b-2 hover:border-black '>
                 Dashboard'a Git
             </Link>
             {/* Durum mesajı */}
-
             {message && (
-                <div className="text-center mt-5 me-5">
-                    <div className="font-mono rounded-lg bg-gray-800 inline-block text-white p-2">
+                <div className="absolute md:top-24 text-center  md:left-1/2 md:right-1/4  transform md:-translate-x-1/2 right-5 top-20">
+                    <div className="font-semibold bg-blue-200 rounded-md inline-block text-blue-600 p-2">
                         {message}
                     </div>
                 </div>
@@ -98,7 +97,7 @@ const Highlights = () => {
 
             <aside className="bg-slate-200 p-3 rounded-md">
                 <h2 className='text-xl font-bold text-center mb-5'>Öne Çıkanlar</h2>
-                <div className='flex space-x-16 overflow-x-auto'>
+                <div className='flex space-x-16 overflow-x-scroll'>
                     {highlightsData.map((high, index) => (
                         <>
 

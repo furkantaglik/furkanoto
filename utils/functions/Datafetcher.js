@@ -1,7 +1,7 @@
 import { collection, doc, getDocs, updateDoc, addDoc, deleteDoc, Timestamp, query, where, getDoc, setDoc } from "firebase/firestore";
 import { db } from "../Firebase";
-// import carsData from "@/mocks/cars.json"
-// import highData from "@/mocks/highlights"
+import carsData from "@/mocks/cars.json"
+import highData from "@/mocks/highlights"
 
 // kaydetme işlemleri
 export async function getSavedCars(userId) {
@@ -51,12 +51,12 @@ export async function savedStatus(userId, carId) {
 // araç işlemleri
 export async function getAllCars() {
     try {
-        const collectionRef = collection(db, "cars");
-        const querySnapshot = await getDocs(collectionRef);
-        const carsData = querySnapshot.docs.map((doc) => ({
-            id: doc.id,
-            ...doc.data()
-        }));
+        // const collectionRef = collection(db, "cars");
+        // const querySnapshot = await getDocs(collectionRef);
+        // const carsData = querySnapshot.docs.map((doc) => ({
+        //     id: doc.id,
+        //     ...doc.data()
+        // }));
 
         return carsData;
 
@@ -118,12 +118,12 @@ export async function updateCar(formData, setMessage) {
 //  Öne çıkanlar
 export async function getAllHighlights() {
     try {
-        const collectionRef = collection(db, "highlights");
-        const querySnapshot = await getDocs(collectionRef);
-        const highData = querySnapshot.docs.map((doc) => ({
-            id: doc.id,
-            ...doc.data()
-        }));
+        // const collectionRef = collection(db, "highlights");
+        // const querySnapshot = await getDocs(collectionRef);
+        // const highData = querySnapshot.docs.map((doc) => ({
+        //     id: doc.id,
+        //     ...doc.data()
+        // }));
 
         return highData;
 

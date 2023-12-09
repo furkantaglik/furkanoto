@@ -24,7 +24,7 @@ const Header = () => {
     }
     return (
         <>
-            <header className="sticky top-0 z-20 flex items-center max-w-screen-2xl px-2 md:px-10 py-3 mx-auto bg-black text-white border-b-2 border-gray-500 w-full">
+            <header className="sticky top-0 z-20 flex items-center max-w-screen-2xl px-2 md:px-10 py-3 mx-auto bg-black text-white  w-full">
                 <div className="w-1/3 flex justify-start">
                     <div className="hidden md:block">
                         <SearchBar />
@@ -42,9 +42,9 @@ const Header = () => {
                     </button>
                     {isLogin === true && openModal === true && (
                         <>
-                            <div className="hidden text-center cursor-pointer font-bold absolute gap-y-2 top-24 right-0 z-20 w-40 md:grid items-center justify-center p-1 max-w-screen-2xl mx-auto bg-neutral-800 text-white">
-                                <Link className="border-b hover:text-blue-500 flex items-center" href="/Saved"><MdFavorite /> Favoriler</Link>
-                                <button className="border-b hover:text-blue-500 flex items-center" onClick={handleSignOut}><RiLogoutBoxFill /> Çıkış Yap</button>
+                            <div className="hidden text-center cursor-pointer font-bold absolute gap-y-2 top-24 right-0 z-20 w-40 md:grid items-center justify-center p-1 max-w-screen-2xl mx-auto border border-slate-800 rounded-sm bg-slate-900 text-white">
+                                <Link className=" hover:text-blue-500 flex items-center" href="/Saved"><MdFavorite /> Favoriler</Link>
+                                <button className=" hover:text-blue-500 flex items-center" onClick={handleSignOut}><RiLogoutBoxFill /> Çıkış Yap</button>
                             </div>
                         </>
 
@@ -52,10 +52,9 @@ const Header = () => {
                 </div>
             </header>
             {isLogin === true && openModal === true && (
-                <div className="md:hidden sticky font-bold  top-16 z-20 flex items-center justify-between p-3 max-w-screen-2xl mx-auto bg-neutral-800 text-white">
-                    <button className="border-b hover:text-blue-500 flex items-center" onClick={handleSignOut}><RiLogoutBoxFill /> Çıkış Yap</button>
-                    <Link className="border-b hover:text-blue-500 flex items-center" href="/Saved"><MdFavorite /> Favoriler</Link>
-                    <h1>Dahası</h1>
+                <div className="md:hidden sticky font-bold  top-16 z-20 flex items-center justify-between p-3 max-w-screen-2xl mx-auto bg-slate-900 text-white">
+                    <button className=" hover:text-blue-500 flex items-center" onClick={handleSignOut}><RiLogoutBoxFill /> Çıkış Yap</button>
+                    <Link className="hover:text-blue-500 flex items-center" href="/Saved"><MdFavorite /> Favoriler</Link>
                 </div>
             )}
             {!isLogin && openModal && (

@@ -2,7 +2,7 @@ import {BsWhatsapp} from "react-icons/bs"
 
 const DetailContainer = ({ detailinfo }) => {
     return (
-        <div className='max-w-screen-2xl mx-auto my-10'>
+        <div className='max-w-screen-2xl mx-auto mt-10 mb-20'>
             <div className='grid grid-cols-1  md:grid-cols-3 justify-center mx-auto w-fit border-b-2 border-gray-700'>
                 <img src={detailinfo.image1} alt="" style={{ width: "400px", height: "200px" }} />
                 <img src={detailinfo.image2} alt="" style={{ width: "400px", height: "200px" }} />
@@ -33,11 +33,11 @@ const DetailContainer = ({ detailinfo }) => {
                     <span>{detailinfo.color}</span>
                     <span>{detailinfo.engine}</span>
                     <span>{detailinfo.year}</span>
-                    <span>{detailinfo.price} TL</span>
+                    <span>{detailinfo.price} ₺</span>
                 </div>
             </div>
             <div className="flex items-center justify-center">
-                <button className="font-bold flex text-white rounded-lg items-center gap-x-2 p-2 mt-5" 
+                <button className="font-bold flex text-white rounded-lg items-center gap-x-2 p-2 mt-4" 
                 style={{backgroundColor:"#128C7E"}}><BsWhatsapp/> İletişim</button>
             </div>
         </div>

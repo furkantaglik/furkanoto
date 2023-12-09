@@ -50,23 +50,22 @@ const Admin = () => {
     }, [message]);
 
     return (
-        <section className='max-w-screen-xl mx-auto'>
+        <section className='max-w-screen-xl mx-auto md:mt-16 mb-20'>
             <Link href="/Highlights"
                 className='p-2 flex w-fit font-semibold md:float-right border-b-2 hover:border-black '>
                 Öne Çıkanlara Git
             </Link>
-            {/* Durum mesajı */}
 
+            {/* Durum mesajı */}
             {message && (
-                <div className="text-center mt-5 me-5">
-                    <div className="font-mono rounded-lg bg-gray-800 inline-block text-white p-2">
+                <div className="absolute md:top-24 text-center  md:left-1/2 md:right-1/4  transform md:-translate-x-1/2 right-5 top-20">
+                    <div className="font-semibold bg-blue-200 rounded-md inline-block text-blue-600 p-2">
                         {message}
                     </div>
                 </div>
             )}
 
             {/* Kontroller  */}
-
             <div className='grid grid-cols-2 md:grid-cols-3 mx-auto md:w-2/3 gap-x-5 gap-y-5 lg:gap-y-0 p-3 my-10 bg-gray-300 rounded-lg font-bold'>
                 <button
                     onClick={() => addCar(formData, setMessage)}
@@ -93,10 +92,12 @@ const Admin = () => {
                 </button>
             </div>
 
+
+
             <div className='grid grid-cols-6 gap-x-2'>
                 {/* Side bar */}
 
-                <aside className={`h-full absolute md:relative  md:col-span-2 transition-transform  ${openSideBar ? '-translate-x-0' : '-translate-x-full md:translate-x-0'}`}>
+                <aside className={`md:h-[620px] h-[810px] absolute md:relative  md:col-span-2 transition-transform  ${openSideBar ? '-translate-x-0' : '-translate-x-full md:translate-x-0'}`}>
                     <div className="h-full px-3 py-4 overflow-y-auto text-white bg-gray-800 rounded-lg">
                         <ul className="space-y-2">
                             {carsData.map((car, index) => (

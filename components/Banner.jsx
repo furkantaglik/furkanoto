@@ -30,8 +30,8 @@ const Banner = () => {
 
       <div className="absolute md:top-40 top-5 md:left-10 left-5 text-white font-bold z-10">
         <h1 className="md:text-5xl text-lg font-serif md:mb-10 text-blue-500">Yeni E Serisi</h1>
-        <p className="md:text-lg text-sm text-neutral-300 md:mb-16 mb-8">Senin Yansıman !</p>
-        <Link href="/test" className="bg-blue-600 hover:bg-blue-700 md:px-10 px-5 py-1">
+        <p className="md:text-xl text-sm  md:mb-16 mb-8">Senin Yansıman !</p>
+        <Link href="/test" className="bg-slate-900 hover:bg-slate-800 md:px-10 rounded-full px-5 py-3">
           Keşfedin
         </Link>
       </div>

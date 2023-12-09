@@ -44,7 +44,7 @@ const HomeContainer = ({ homeinfo }) => {
   }, [filters, homeinfo]);
 
   return (
-    <section>
+    <section className="mb-20">
       <Banner />
       <Slider />
       <div className=" max-w-screen-xl mx-auto mb-8">
