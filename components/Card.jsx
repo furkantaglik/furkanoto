@@ -39,7 +39,7 @@ const Card = ({ id, marka, model, yakit, fiyat, resim1, resim2, resim3 }) => {
   };
 
   return (
-    <section className='hover:bg-gray-100 p-5 h-[300px] w-full group transition duration-100 cursor-pointer'>
+    <section className='hover:bg-gray-100 p-5 h-fit w-fit group transition duration-100 cursor-pointer'>
       <button onClick={saveControl} className="float-right">
         {isSaved ? (
           <MdFavorite className="w-5 h-5 rounded-full hover:bg-red-500" />
@@ -52,7 +52,7 @@ const Card = ({ id, marka, model, yakit, fiyat, resim1, resim2, resim3 }) => {
         <span className='bg-gray-200 rounded-full px-2 text-sm text-gray-700'>{yakit}</span>
       </div>
       <Link href={`Detail/${id}`}>
-        <img src={image} alt="" className="w-[400px] md:h-[200px] h-[120px]" />
+        <img src={image} alt="" className="w-[300px] md:h-[150px] h-[120px] " />
       </Link>
       <div className=" text-center pt-2 md:opacity-0 group-hover:opacity-100 transition duration-100">
         <div className="flex justify-center items-center gap-x-5 mb-2">

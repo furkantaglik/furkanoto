@@ -44,7 +44,7 @@ const Sidebar = ({ filters, setFilters }) => {
         />
       )}
 
-      <aside className={`fixed md:sticky top-16 md:top-20 left-0 z-10 w-80 h-screen transition-transform  max-w-screen-2xl  ${openSideMenu ? "translate-x-0" : "-translate-x-full"} md:translate-x-0`}>
+      <aside className={`fixed md:sticky top-16 md:top-20 left-0 z-10 w-[300px] h-screen transition-transform  max-w-screen-2xl  ${openSideMenu ? "translate-x-0" : "-translate-x-full"} md:translate-x-0`}>
         <div className="h-full p-5 overflow-y-auto bg-neutral-200 text-black">
           <button
             onClick={() => setOpenSideMenu(false)}
