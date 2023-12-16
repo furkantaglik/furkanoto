@@ -3,6 +3,7 @@ import './globals.css'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import Head from 'next/head'
+import ScrollToTop from '@/components/ScrollToTop'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -17,8 +18,8 @@ export default function RootLayout({ children }) {
       <Head>
         <link rel="icon" href="/favicon.ico" sizes="any" />
       </Head>
-
       <body className={inter.className}>
+        <ScrollToTop/>
         <Header />
         <main>
           {children}

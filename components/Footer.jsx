@@ -3,24 +3,14 @@ import Link from 'next/link'
 import { AiOutlineArrowUp } from "react-icons/ai"
 
 const Footer = () => {
-  const ScrollTop = () => {
-    const scrollToTop = () => {
-      const c = document.documentElement.scrollTop || document.body.scrollTop;
-      if (c > 0) {
-        window.requestAnimationFrame(scrollToTop);
-        window.scrollTo(0, c - c / 8);
-      }
-    };
-
-    scrollToTop();
+  const scrollToTop = () => {
+    window.scrollTo({top:0,behavior:'smooth'})
   };
 
   return (
     <footer className='bg-black p-10 mx-auto max-w-screen-2xl h-full text-gray-300'>
       <div className='text-white text-center ease-in-out animate-bounce'>
-        <button
-          onClick={ScrollTop}
-        >
+        <button onClick={scrollToTop}>
           <AiOutlineArrowUp className='flex mx-auto' /> <span className=''>Başa Dön</span>
         </button>
       </div>

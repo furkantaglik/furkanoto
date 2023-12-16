@@ -45,10 +45,10 @@ const Sidebar = ({ filters, setFilters }) => {
       )}
 
       <aside className={`fixed md:sticky top-16 md:top-20 left-0 z-10 w-80 h-screen transition-transform  max-w-screen-2xl  ${openSideMenu ? "translate-x-0" : "-translate-x-full"} md:translate-x-0`}>
-        <div className="h-full p-5 overflow-y-auto bg-stone-100">
+        <div className="h-full p-5 overflow-y-auto bg-neutral-200 text-black">
           <button
             onClick={() => setOpenSideMenu(false)}
-            className="flex justify-between md:justify-center font-semibold text-gray-900 w-full text-2xl mb-3 border-b-2 border-gray-700">
+            className="flex justify-between md:justify-center font-semibold w-full text-2xl mb-3 border-b-2 border-gray-700">
             <h1 className="flex  items-center"> <BiSolidCategory /> FİLTRELER</h1>
             <AiOutlineCloseCircle className="md:hidden" />
           </button>

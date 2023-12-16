@@ -59,7 +59,7 @@ export default function LoginForm() {
     }
 
     return (
-        <section className='fixed top-1/2 left-1/2 gap-x-2 transform -translate-x-1/2 -translate-y-1/2 grid md:grid-cols-2 z-30  rounded-md py-5 px-2 w-80 mx-auto md:w-1/3 bg-black text-center font-bold text-white'>
+        <section className='fixed top-1/2 left-1/2 gap-x-2 transform -translate-x-1/2 -translate-y-1/2 grid md:grid-cols-2 z-30  rounded-md py-5 px-2 w-80 mx-auto md:w-1/3 bg-black border border-slate-700 text-center font-bold text-white'>
             <div className="">
                 <img src="https://static.vecteezy.com/system/resources/previews/023/977/557/large_2x/front-view-dark-silhouette-of-a-modern-sport-black-car-isolated-on-black-background-ai-generated-free-photo.jpg" alt="" srcset="" />
             </div>
@@ -86,7 +86,7 @@ export default function LoginForm() {
                 <span className=' text-gray-400'>Ya Da</span>
                 <button
                     onClick={() => setChange(!change)}
-                    className='text-white bg-stone-600 hover:bg-stone-500  cursor-pointer  p-1'>
+                    className='text-white bg-slate-600 hover:bg-slate-700  cursor-pointer  p-1'>
                     {!change ? "Kayıt Ol" : "Giriş Yap"}
                 </button>
             </div>

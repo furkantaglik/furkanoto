@@ -104,7 +104,7 @@ const Highlights = () => {
                             <div className='flex-none w-64 ' key={high.id}>
                                 <button
                                     onClick={() => { setFormData(high) }}
-                                    className='py-1 px-10 w-full text-center bg-gray-600 hover:bg-gray-500 text-white font-semibold'>
+                                    className='py-1 px-10 w-full text-center bg-gray-600 hover:bg-gray-700 text-white font-semibold'>
                                     Düzenle
                                 </button>
                                 <img src={high.image} alt={high.title} />
