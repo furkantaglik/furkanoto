@@ -60,9 +60,10 @@ export default function LoginForm() {
 
     return (
         <section className='fixed top-1/2 left-1/2 gap-x-2 transform -translate-x-1/2 -translate-y-1/2 grid md:grid-cols-2 z-30  rounded-md py-5 px-2 w-80 mx-auto md:w-1/3 bg-black border border-slate-700 hover:border-slate-400 text-center font-bold text-white'>
-            <div className="">
+            <div className="bg-[#0c0c0c]">
                 <img src="https://static.vecteezy.com/system/resources/previews/023/977/557/large_2x/front-view-dark-silhouette-of-a-modern-sport-black-car-isolated-on-black-background-ai-generated-free-photo.jpg" alt="" srcset="" />
             </div>
+            
             <div className="grid grid-cols-1 gap-y-5">
                 <label htmlFor="email" className='text-start'>E-posta</label>
                 <input type='email' name="email" className=' p-1  bg-transparent border-b'
