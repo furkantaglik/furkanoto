@@ -52,7 +52,7 @@ const Sidebar = ({ filters, setFilters }) => {
             <h1 className="flex  items-center"> <BiSolidCategory /> FİLTRELER</h1>
             <AiOutlineCloseCircle className="md:hidden" />
           </button>
-          <ul className="space-y-10 font-medium">
+          <ul className="space-y-7 font-medium">
             <li className="md:hidden block">
               <SearchBar />
             </li>
@@ -183,6 +183,19 @@ const Sidebar = ({ filters, setFilters }) => {
                   <input onChange={() => handleCheckboxChange('minengine', '3andup')} checked={filters.minengine.includes('3andup')}
                     id="3veustu" type="checkbox" className="w-6 h-6 " />
                   <label htmlFor="3veustu" className="ml-3 w-full py-3">3.0 Ve Üstü</label>
+                </div>
+              </Accordion>
+            </li>
+            <li>
+              <Accordion title="Hız" >
+                <div className="grid grid-cols-2 justify-between w-1/3 items-center whitespace-nowrap ">
+                  <input onChange={() => handleCheckboxChange('maxspeed', '200anddown')} checked={filters.maxspeed.includes('200anddown')}
+                    id="200vealti" type="checkbox" className="w-6 h-6 " />
+                  <label htmlFor="200vealti" className="ml-3 w-full py-3">200 Ve Altı</label>
+
+                  <input onChange={() => handleCheckboxChange('minspeed', '200andup')} checked={filters.minspeed.includes('200andup')}
+                    id="200veustu" type="checkbox" className="w-6 h-6 " />
+                  <label htmlFor="200veustu" className="ml-3 w-full py-3">200 Ve Üstü</label>
                 </div>
               </Accordion>
             </li>

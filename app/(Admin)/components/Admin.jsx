@@ -16,6 +16,7 @@ const initialFormState = {
     image1: '',
     image2: '',
     image3: '',
+    speed:'',
     description: ''
 };
 
@@ -210,7 +211,11 @@ const Admin = () => {
                         <label className="block mb-2 font-semibold" htmlFor='resim3'>Resim 3</label>
                         <input type="text" id='resim3' onChange={(e) => setFormData({ ...formData, image3: e.target.value })} value={formData.image3} className="w-full border rounded px-2 py-1 text-black" placeholder="Buraya yaz." />
                     </div>
-                    <div className="md:col-span-3 col-span-2">
+                    <div className="">
+                        <label className="block mb-2 font-semibold" htmlFor='resim3'>Max Hız km/sa</label>
+                        <input type="number" id='resim3' onChange={(e) => setFormData({ ...formData, speed: e.target.value })} value={formData.speed} className="w-full border rounded px-2 py-1 text-black" placeholder="Buraya yaz." />
+                    </div>
+                    <div className="md:col-span-2 ">
                         <label className="block mb-2 font-semibold" htmlFor='açiklama'>Açıklama</label>
                         <textarea type="text" id='açiklama' onChange={(e) => setFormData({ ...formData, description: e.target.value })} value={formData.description} className="w-full border rounded px-2 py-1 text-black" placeholder="Buraya yaz." />
                     </div>

@@ -47,16 +47,22 @@ const DetailContainer = ({ detailinfo }) => {
                     <h2>Renk</h2>
                     <h2>Motor</h2>
                     <h2>Yıl</h2>
+                    <h2>Max Hız</h2>
                     <h2>Fiyat</h2>
                 </div>
                 <div className='text-md grid  gap-y-5'>
                     <span>{detailinfo.color}</span>
                     <span>{detailinfo.engine}</span>
                     <span>{detailinfo.year}</span>
+                    <span>{detailinfo.speed} Km/sa</span>
                     <span>{detailinfo.price} ₺</span>
                 </div>
             </div>
-            <div className="flex items-center justify-between">
+            <div className="md:w-full mt-3 mx-3 bg-zinc-300 p-3">
+                <h2 className="text-md font-bold uppercase ">Açıklama</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste optio explicabo, culpa in, a sed temporibus veritatis repellat aliquam ab ea nemo nihil id, ipsam est? Nemo temporibus in praesentium?</p>
+            </div>
+            <div className="flex items-center justify-between md:mx-0 mx-3">
                 <button
                     onClick={handleShare}
                     className="font-bold flex text-white rounded-lg items-center gap-x-2 p-2 mt-4 bg-blue-800 hover:bg-blue-900" >

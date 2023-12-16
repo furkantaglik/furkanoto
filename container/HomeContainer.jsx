@@ -16,6 +16,8 @@ const HomeContainer = ({ homeinfo }) => {
     color: [],
     minengine: [],
     maxengine: [],
+    minspeed: [],
+    maxspeed: [],
     minyear: [],
     maxyear: [],
     minprice: [],
@@ -32,16 +34,20 @@ const HomeContainer = ({ homeinfo }) => {
         (filters.color.length === 0 || filters.color.includes(car.color)) &&
         (filters.minengine.length === 0 || (filters.minengine.includes("3andup") && 3 <= parseFloat(car.engine))) &&
         (filters.maxengine.length === 0 || (filters.maxengine.includes("3anddown") && 3 >= parseFloat(car.engine))) &&
-        (filters.minyear.length === 0 || filters.minyear[filters.minyear.length - 1] <= car.year) &&
-        (filters.maxyear.length === 0 || filters.maxyear[filters.maxyear.length - 1] >= car.year) &&
-        (filters.minprice.length === 0 || filters.minprice[filters.minprice.length - 1] <= car.price) &&
-        (filters.maxprice.length === 0 || filters.maxprice[filters.maxprice.length - 1] >= car.price)
+
+        (filters.minspeed.length === 0 || (filters.minspeed.includes("200andup") && 200 <= parseFloat(car.speed))) &&
+        (filters.maxspeed.length === 0 || (filters.maxspeed.includes("200anddown") && 200 >= parseFloat(car.speed))) &&
+
+        (filters.minyear.length === 0 || (filters.minyear[filters.minyear.length - 1] || 0) <= car.year) &&
+        (filters.maxyear.length === 0 || (filters.maxyear[filters.maxyear.length - 1] || Infinity) >= car.year) &&
+        (filters.minprice.length === 0 || (filters.minprice[filters.minprice.length - 1] || 0) <= car.price) &&
+        (filters.maxprice.length === 0 || (filters.maxprice[filters.maxprice.length - 1] || Infinity) >= car.price)
 
       );
     });
 
     setFilteredCars(filtered);
-  }, [filters, homeinfo]);
+  }, [filters]);
 
   return (
     <section className="mb-52">
