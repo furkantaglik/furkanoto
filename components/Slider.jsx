@@ -73,13 +73,13 @@ const Slider = () => {
         <div className="justify-center mt-4 hidden md:block">
           <button
             onClick={prevImage}
-            className="absolute top-2/4 text-lg left-5  md:text-2xl animate-pulse bg-slate-700 rounded-full p-1 md:p-2"
+            className="absolute top-2/4 text-lg left-5  md:text-2xl animate-pulse bg-neutral-700 rounded-full p-1 md:p-2"
           >
             <AiOutlineArrowLeft />
           </button>
           <button
             onClick={nextImage}
-            className="absolute top-2/4 text-lg right-5 md:text-2xl animate-pulse bg-slate-700 rounded-full p-1 md:p-2"
+            className="absolute top-2/4 text-lg right-5 md:text-2xl animate-pulse bg-neutral-700 rounded-full p-1 md:p-2"
           >
             <AiOutlineArrowRight />
           </button>
