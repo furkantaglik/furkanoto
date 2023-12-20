@@ -70,11 +70,7 @@ const DetailContainer = ({ detailinfo }) => {
       </div>
       <div className="md:w-full mt-3 mx-3 bg-zinc-300 p-3">
         <h2 className="text-md font-bold uppercase ">Açıklama</h2>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste optio
-          explicabo, culpa in, a sed temporibus veritatis repellat aliquam ab ea
-          nemo nihil id, ipsam est? Nemo temporibus in praesentium?
-        </p>
+        <p>{detailinfo.description}</p>
       </div>
       <div className="flex items-center justify-between md:mx-0 mx-3">
         <button
