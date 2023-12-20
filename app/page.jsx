@@ -8,5 +8,5 @@ export default async function Home() {
     <>
       <HomeContainer homeinfo={carsData} />
     </>
-  )
+  );
 }

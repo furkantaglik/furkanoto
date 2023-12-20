@@ -1,26 +1,26 @@
 [
-    {
-        "title": "Yeni mercedes Amg ",
-        "description": "Hız ve tutkunun yarışına hazır mısınız? Formula 1 teknolojisinden karakteristik duruşuna kadar,  gelişmeye devam eden E PERFORMANCE dünyası hakkında tüm özellikleri keşfedin.",
-        "image": "https://www.mercedes-benz.com.tr/content/turkey/tr/passengercars/_jcr_content/root/responsivegrid/simple_teaser_115569_648159975/simple_teaser_item_c_1078796738.component.damq6.3396912644997.jpg/512x384-e-performance.jpg",
-        "url": "car01"
-    },
-    {
-        "title": "Çok Güçlü 4x4",
-        "description": "Hız ve tutkunun yarışına hazır mısınız? Formula 1 teknolojisinden karakteristik duruşuna kadar,  gelişmeye devam eden E PERFORMANCE dünyası hakkında tüm özellikleri keşfedin.",
-        "image": "https://www.mercedes-benz.com.tr/content/turkey/tr/passengercars/_jcr_content/root/responsivegrid/simple_teaser_115569_648159975/simple_teaser_item_c_1578540845.component.damq6.3394413799823.jpg/mercedes-benz-defining-class-home-teaser-764x573-08-2023.jpg",
-        "url": "car02"
-    },
-    {
-        "title": "Efsane Auidi A5 ",
-        "description": "Hız ve tutkunun yarışına hazır mısınız? Formula 1 teknolojisinden karakteristik duruşuna kadar,  gelişmeye devam eden E PERFORMANCE dünyası hakkında tüm özellikleri keşfedin.",
-        "image": "https://www.mercedes-benz.com.tr/content/turkey/tr/passengercars/_jcr_content/root/responsivegrid/simple_teaser_115569_648159975/simple_teaser_item_c_1078796738.component.damq6.3396912644997.jpg/512x384-e-performance.jpg",
-        "url": "car03"
-    },
-    {
-        "title": "Eskilerden dodge Chalanger ",
-        "description": "Hız ve tutkunun yarışına hazır mısınız? Formula 1 teknolojisinden karakteristik duruşuna kadar,  gelişmeye devam eden E PERFORMANCE dünyası hakkında tüm özellikleri keşfedin.",
-        "image": "https://www.mercedes-benz.com.tr/content/turkey/tr/passengercars/_jcr_content/root/responsivegrid/simple_teaser_115569_648159975/simple_teaser_item_c_1578540845.component.damq6.3394413799823.jpg/mercedes-benz-defining-class-home-teaser-764x573-08-2023.jpg",
-        "url": "car04"
-    }
+  {
+    "title": "Yeni mercedes Amg ",
+    "description": "Hız ve tutkunun yarışına hazır mısınız? Formula 1 teknolojisinden karakteristik duruşuna kadar,  gelişmeye devam eden E PERFORMANCE dünyası hakkında tüm özellikleri keşfedin.",
+    "image": "https://www.mercedes-benz.com.tr/content/turkey/tr/passengercars/_jcr_content/root/responsivegrid/simple_teaser_115569_648159975/simple_teaser_item_c_1078796738.component.damq6.3396912644997.jpg/512x384-e-performance.jpg",
+    "url": "car01"
+  },
+  {
+    "title": "Çok Güçlü 4x4",
+    "description": "Hız ve tutkunun yarışına hazır mısınız? Formula 1 teknolojisinden karakteristik duruşuna kadar,  gelişmeye devam eden E PERFORMANCE dünyası hakkında tüm özellikleri keşfedin.",
+    "image": "https://www.mercedes-benz.com.tr/content/turkey/tr/passengercars/_jcr_content/root/responsivegrid/simple_teaser_115569_648159975/simple_teaser_item_c_1578540845.component.damq6.3394413799823.jpg/mercedes-benz-defining-class-home-teaser-764x573-08-2023.jpg",
+    "url": "car02"
+  },
+  {
+    "title": "Efsane Auidi A5 ",
+    "description": "Hız ve tutkunun yarışına hazır mısınız? Formula 1 teknolojisinden karakteristik duruşuna kadar,  gelişmeye devam eden E PERFORMANCE dünyası hakkında tüm özellikleri keşfedin.",
+    "image": "https://www.mercedes-benz.com.tr/content/turkey/tr/passengercars/_jcr_content/root/responsivegrid/simple_teaser_115569_648159975/simple_teaser_item_c_1078796738.component.damq6.3396912644997.jpg/512x384-e-performance.jpg",
+    "url": "car03"
+  },
+  {
+    "title": "Eskilerden dodge Chalanger ",
+    "description": "Hız ve tutkunun yarışına hazır mısınız? Formula 1 teknolojisinden karakteristik duruşuna kadar,  gelişmeye devam eden E PERFORMANCE dünyası hakkında tüm özellikleri keşfedin.",
+    "image": "https://www.mercedes-benz.com.tr/content/turkey/tr/passengercars/_jcr_content/root/responsivegrid/simple_teaser_115569_648159975/simple_teaser_item_c_1578540845.component.damq6.3394413799823.jpg/mercedes-benz-defining-class-home-teaser-764x573-08-2023.jpg",
+    "url": "car04"
+  }
 ]
