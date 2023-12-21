@@ -20,7 +20,7 @@ const DetailContainer = ({ detailinfo }) => {
   };
 
   return (
-    <div className="md:max-w-screen-xl max-w-screen-lg mx-auto mt-20 mb-52">
+    <div className="md:max-w-screen-xl max-w-screen-md mx-auto mt-20 mb-52">
       <div className="grid grid-cols-1  md:grid-cols-3 justify-center mx-auto w-fit border-b-2 border-gray-700">
         <img
           src={detailinfo.image1}
