@@ -63,7 +63,7 @@ const HomeContainer = ({ homeinfo }) => {
     <section className="mb-52">
       <Banner />
       <Slider />
-      <div className=" max-w-screen-xl mb-8 mx-2 md:mx-auto">
+      <div className=" md:max-w-screen-xl max-w-screen-lg mb-8 mx-2 md:mx-auto">
         <h1 className="md:text-3xl text-xl font-bold">Araçlar</h1>
         <p className=" border-b-4 border-blue-800 text-lg">
           {filteredCars.length} sonuç Bulundu
