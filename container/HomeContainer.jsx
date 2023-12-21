@@ -63,11 +63,13 @@ const HomeContainer = ({ homeinfo }) => {
     <section className="mb-52">
       <Banner />
       <Slider />
-      <div className="max-w-screen-2xl mb-8 mx-2 md:mx-auto w-full">
-        <h1 className="md:text-3xl text-xl font-bold">Araçlar</h1>
-        <p className=" border-b-4 border-blue-800 text-lg">
-          {filteredCars.length} sonuç Bulundu
-        </p>
+      <div className="max-w-screen-2xl mx-auto w-full mb-16">
+        <div className="relative md:mx-20 mx-2">
+          <h1 className="md:text-3xl text-xl font-bold">Araçlar</h1>
+          <p className=" border-b-4 border-blue-800 text-lg">
+            {filteredCars.length} sonuç Bulundu
+          </p>
+        </div>
       </div>
       <div className="flex max-w-screen-2xl mx-auto gap-x-3">
         <Sidebar filters={filters} setFilters={setFilters} />
