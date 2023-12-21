@@ -1,6 +1,5 @@
 import DetailContainer from "@/container/DetailContainer";
 import { getAllCars } from "@/utils/functions/Datafetcher";
-// import carsData from "@/mocks/cars.json"
 
 const page = async ({ params }) => {
   const carsData = await getAllCars();
