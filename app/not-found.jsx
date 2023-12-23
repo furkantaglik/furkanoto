@@ -1,6 +1,10 @@
 import Link from "next/link";
 import React from "react";
 
+export const metadata = {
+  title: "Sayfa Bulunamadı",
+};
+
 const NotFound = () => {
   return (
     <section className="max-w-screen-2xl mx-auto relative h-full">

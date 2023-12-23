@@ -1,6 +1,15 @@
 import DetailContainer from "@/container/DetailContainer";
 import { getAllCars } from "@/utils/functions/Datafetcher";
 
+export async function generateMetadata({ params }) {
+  const carsData = await getAllCars();
+  const carId = carsData.find((car) => car.id == params.id);
+
+  return {
+    title: `${carId.brand} ${carId.model}`,
+  };
+}
+
 const page = async ({ params }) => {
   const carsData = await getAllCars();
   const carId = carsData.find((car) => car.id == params.id);
