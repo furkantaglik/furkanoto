@@ -12,22 +12,22 @@ import {
   setDoc,
 } from "firebase/firestore";
 import { db } from "../Firebase";
-// import carsData from "@/mocks/cars.json";
-// import highData from "@/mocks/highlights";
+import carsData from "@/mocks/cars.json";
+import highData from "@/mocks/highlights";
 
 // araç işlemleri
 export async function getAllCars() {
   try {
-    const collectionRef = collection(db, "cars");
-    const querySnapshot = await getDocs(collectionRef);
-    const carsData = querySnapshot.docs.map((doc) => ({
-      id: doc.id,
-      ...doc.data(),
-    }));
+    // const collectionRef = collection(db, "cars");
+    // const querySnapshot = await getDocs(collectionRef);
+    // const carsData = querySnapshot.docs.map((doc) => ({
+    //   id: doc.id,
+    //   ...doc.data(),
+    // }));
 
     return carsData;
   } catch (error) {
-    console.log(error);
+    throw new Error("Araçlar getirilirken bir hata oluştu");
   }
 }
 export async function addCar(formData, setMessage) {
@@ -68,12 +68,12 @@ export async function updateCar(formData, setMessage) {
 //  Öne çıkanlar
 export async function getAllHighlights() {
   try {
-    const collectionRef = collection(db, "highlights");
-    const querySnapshot = await getDocs(collectionRef);
-    const highData = querySnapshot.docs.map((doc) => ({
-      id: doc.id,
-      ...doc.data(),
-    }));
+    // const collectionRef = collection(db, "highlights");
+    // const querySnapshot = await getDocs(collectionRef);
+    // const highData = querySnapshot.docs.map((doc) => ({
+    //   id: doc.id,
+    //   ...doc.data(),
+    // }));
 
     return highData;
   } catch (error) {
@@ -190,7 +190,7 @@ export async function getSearchResults(searchValue) {
 
     return filteredData;
   } catch (error) {
-    setMessage("Bir Hata Oluştu");
+    console.error("Arama sonuçları getirilirken Hata Oluştu");
   }
 }
 

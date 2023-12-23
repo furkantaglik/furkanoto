@@ -13,7 +13,8 @@ export default function error({ error, reset }) {
           Bir Hata Oluştu!
         </h1>
         <p className="md:text-lg text-xs  text-neutral-300 md:mb-16 mb-8 w-6/12">
-          Malesef Sistemimizde Yaşanan Bir hatadan dolayı şuan erişilemiyor.{" "}
+          Malesef Sistemimizde Yaşanan Bir hatadan dolayı şuan erişilemiyor.
+          {/* {error.message} */}
         </p>
         <button
           onClick={() => reset()}
