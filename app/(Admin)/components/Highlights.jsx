@@ -8,18 +8,17 @@ import {
 } from "@/utils/functions/Datafetcher";
 import Link from "next/link";
 
-const initialFormState = {
-  title: "",
-  description: "",
-  url: "",
-  image: "",
-};
-
 const Highlights = () => {
-  const [formData, setFormData] = useState(initialFormState);
   const [highlightsData, setHighlightsData] = useState([]);
   const [message, setMessage] = useState("");
+  const [formData, setFormData] = useState({
+    title: "",
+    description: "",
+    url: "",
+    image: "",
+  });
 
+  // veriler çekilir
   useEffect(() => {
     async function fetchData() {
       const data = await getAllHighlights();
@@ -42,6 +41,13 @@ const Highlights = () => {
       clearTimeout(timer);
     };
   }, [message]);
+
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
 
   return (
     <section className=" max-w-screen-xl mx-auto md:mt-16 mb-20">
@@ -90,10 +96,8 @@ const Highlights = () => {
           </label>
           <input
             type="text"
-            id="title"
-            onChange={(e) =>
-              setFormData({ ...formData, title: e.target.value })
-            }
+            name="title"
+            onChange={handleChange}
             value={formData.title}
             className="w-full border rounded px-2 py-1 text-black"
             placeholder="Buraya yaz."
@@ -105,8 +109,8 @@ const Highlights = () => {
           </label>
           <input
             type="text"
-            id="url"
-            onChange={(e) => setFormData({ ...formData, url: e.target.value })}
+            name="url"
+            onChange={handleChange}
             value={formData.url}
             className="w-full border rounded px-2 py-1 text-black"
             placeholder="Buraya yaz."
@@ -114,15 +118,13 @@ const Highlights = () => {
         </div>
 
         <div className="">
-          <label className="block mb-2 font-semibold" htmlFor="resim">
+          <label className="block mb-2 font-semibold" htmlFor="image">
             Görsel url
           </label>
           <input
             type="text"
-            id="resim"
-            onChange={(e) =>
-              setFormData({ ...formData, image: e.target.value })
-            }
+            name="resim"
+            onChange={handleChange}
             value={formData.image}
             className="w-full border rounded px-2 py-1 text-black"
             placeholder="Buraya yaz."
@@ -134,10 +136,8 @@ const Highlights = () => {
           </label>
           <input
             type="text"
-            id="description"
-            onChange={(e) =>
-              setFormData({ ...formData, description: e.target.value })
-            }
+            name="description"
+            onChange={handleChange}
             value={formData.description}
             className="w-full border rounded px-2 py-1 text-black"
             placeholder="Buraya yaz."
