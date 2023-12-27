@@ -12,7 +12,7 @@ import {
   setDoc,
 } from "firebase/firestore";
 import { db } from "../Firebase";
-// import carsData from "@/mocks/cars.json";
+import carsData from "@/mocks/cars.json";
 import highData from "@/mocks/highlights";
 
 // araç işlemleri
@@ -68,12 +68,12 @@ export async function updateCar(formData, setMessage) {
 //  Öne çıkanlar
 export async function getAllHighlights() {
   try {
-    // const collectionRef = collection(db, "highlights");
-    // const querySnapshot = await getDocs(collectionRef);
-    // const highData = querySnapshot.docs.map((doc) => ({
-    //   id: doc.id,
-    //   ...doc.data(),
-    // }));
+    const collectionRef = collection(db, "highlights");
+    const querySnapshot = await getDocs(collectionRef);
+    const highData = querySnapshot.docs.map((doc) => ({
+      id: doc.id,
+      ...doc.data(),
+    }));
 
     return highData;
   } catch (error) {

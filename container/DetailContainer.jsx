@@ -9,6 +9,7 @@ import { GrNext } from "react-icons/gr";
 const DetailContainer = ({ detailinfo }) => {
   const images = [detailinfo.image1, detailinfo.image2, detailinfo.image3];
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
   const handleShare = () => {
     const shareUrl = window.location.href;
     copyToClipboard(shareUrl);
@@ -25,12 +26,10 @@ const DetailContainer = ({ detailinfo }) => {
   };
 
   const nextImage = () => {
-    // Resim indeksini bir sonraki resme güncelle
-    setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
+    setCurrentImageIndex((nextIndex) => (nextIndex + 1) % images.length);
   };
 
   const previousImage = () => {
-    // Resim indeksini bir önceki resme güncelle
     setCurrentImageIndex(
       (prevIndex) => (prevIndex - 1 + images.length) % images.length
     );
@@ -40,9 +39,9 @@ const DetailContainer = ({ detailinfo }) => {
     <div className="lg:max-w-screen-xl md:max-w-screen-xs mx-auto mt-20 mb-52">
       <div className="grid grid-cols-1  md:grid-cols-3 justify-center mx-auto w-fit border-b-2 border-gray-700">
         <img
-          src={images[currentImageIndex]}
+          src={detailinfo.image1}
           alt={(detailinfo.brand, " | ", detailinfo.model)}
-          className="md:w-[400px]  h-[200px]"
+          className="md:w-[400px]  h-[200px] hidden md:block"
         />
         <img
           src={detailinfo.image2}
@@ -53,6 +52,12 @@ const DetailContainer = ({ detailinfo }) => {
           src={detailinfo.image3}
           alt={(detailinfo.brand, " | ", detailinfo.model)}
           className="md:w-[400px]  h-[200px] hidden md:block"
+        />
+        {/* Mobil resim  */}
+        <img
+          src={images[currentImageIndex]}
+          alt={(detailinfo.brand, " | ", detailinfo.model)}
+          className="md:w-[400px]  h-[200px]  md:hidden"
         />
       </div>
       <div className="flex justify-between mx-4 md:hidden">

@@ -50,18 +50,32 @@ const Slider = () => {
         </h1>
         <div
           className="flex md:overflow-hidden overflow-y-auto md:gap-x-5 gap-x-2 pb-3"
-          style={{ display: "flex" }}
           ref={contentRef}
         >
           {highlights.map((high, index) => (
-            <div key={index + 1} className="flex-shrink-0 md:w-1/3 w-1/2">
+            <div key={index + 1} className="flex-shrink-0 xl:w-1/3 xs:w-1/2">
+              {/* <Link href={`Detail/${high.url}`}> */}
               <img src={high.image} alt={high.title} />
-              <div className="border-2 border-slate-300 md:p-3 p-1">
-                <h1 className="text-xl font-bold mb-2">{high.title}</h1>
-                <p className="font-lg mb-5">{high.description}</p>
+              {/* </Link> */}
+              <div className="border-2 border-slate-300 md:p-3 p-1 flex flex-col h-80  xl:h-64">
+                <h1 className="text-xl font-bold mb-2 ">{high.title}</h1>
+                <p className={`md:font-lg max-w-96 xs:w-full`}>
+                  {window.innerWidth <= 400
+                    ? high.description.length > 90
+                      ? `${high.description.slice(0, 90)}...`
+                      : high.description
+                    : window.innerWidth <= 768
+                    ? high.description.length > 180
+                      ? `${high.description.slice(0, 180)}...`
+                      : high.description
+                    : high.description.length > 250
+                    ? `${high.description.slice(0, 250)}...`
+                    : high.description}
+                </p>
+
                 <Link
                   href={`Detail/${high.url}`}
-                  className="py-1 px-10 md:w-fit w-full mx-auto text-center bg-blue-600 hover:bg-blue-700 text-white font-semibold"
+                  className="py-1 mx-3 md:mx-10 text-center bg-blue-600 hover:bg-blue-700 text-white font-semibold mt-auto"
                 >
                   Keşfedin
                 </Link>
