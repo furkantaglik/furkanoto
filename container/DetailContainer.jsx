@@ -1,9 +1,14 @@
 "use client";
 import Link from "next/link";
+import { useState } from "react";
 import { BsWhatsapp } from "react-icons/bs";
 import { FaShareAlt } from "react-icons/fa";
+import { GrPrevious } from "react-icons/gr";
+import { GrNext } from "react-icons/gr";
 
 const DetailContainer = ({ detailinfo }) => {
+  const images = [detailinfo.image1, detailinfo.image2, detailinfo.image3];
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const handleShare = () => {
     const shareUrl = window.location.href;
     copyToClipboard(shareUrl);
@@ -19,24 +24,50 @@ const DetailContainer = ({ detailinfo }) => {
     textField.remove();
   };
 
+  const nextImage = () => {
+    // Resim indeksini bir sonraki resme güncelle
+    setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
+  };
+
+  const previousImage = () => {
+    // Resim indeksini bir önceki resme güncelle
+    setCurrentImageIndex(
+      (prevIndex) => (prevIndex - 1 + images.length) % images.length
+    );
+  };
+
   return (
     <div className="lg:max-w-screen-xl md:max-w-screen-xs mx-auto mt-20 mb-52">
       <div className="grid grid-cols-1  md:grid-cols-3 justify-center mx-auto w-fit border-b-2 border-gray-700">
         <img
-          src={detailinfo.image1}
+          src={images[currentImageIndex]}
           alt={(detailinfo.brand, " | ", detailinfo.model)}
           className="md:w-[400px]  h-[200px]"
         />
         <img
           src={detailinfo.image2}
           alt={(detailinfo.brand, " | ", detailinfo.model)}
-          className="md:w-[400px]  h-[200px]"
+          className="md:w-[400px]  h-[200px]  hidden md:block"
         />
         <img
           src={detailinfo.image3}
           alt={(detailinfo.brand, " | ", detailinfo.model)}
-          className="md:w-[400px]  h-[200px]"
+          className="md:w-[400px]  h-[200px] hidden md:block"
         />
+      </div>
+      <div className="flex justify-between mx-4 md:hidden">
+        <button
+          className="font-semibold text-xl rounded-full bg-gray-200 p-2 hover:bg-gray-300"
+          onClick={previousImage}
+        >
+          <GrPrevious />
+        </button>
+        <button
+          className="font-semibold text-xl rounded-full bg-gray-200 p-2 hover:bg-gray-300"
+          onClick={nextImage}
+        >
+          <GrNext />
+        </button>
       </div>
       <div className="grid grid-cols-2 md:grid-cols-4 mt-5 mx-auto w-full p-5 justify-center gap-y-5 border-b-2 border-gray-700">
         <div className="text-md flex flex-col gap-y-5 font-bold uppercase mx-3 md:mx-1">

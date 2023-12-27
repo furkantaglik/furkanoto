@@ -23,7 +23,7 @@ const SearchBar = () => {
         placeholder="Otomotiv Ara."
         className="bg-slate-900 rounded-md px-2 py-1 text-white outline-none border-transparent border-b-4 focus:border-blue-900"
       />
-      <div className="absolute right-3 top-1/2 transform -translate-y-1/2 border-l pl-1 border-neutral-400">
+      <div className="absolute right-1 top-1/2 transform -translate-y-1/2 border-l pl-1 border-neutral-400">
         <BiSearchAlt2 className="text-xl" />
       </div>
 
