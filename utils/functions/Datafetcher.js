@@ -12,8 +12,8 @@ import {
   setDoc,
 } from "firebase/firestore";
 import { db } from "../Firebase";
-import carsData from "@/mocks/cars.json";
-import highData from "@/mocks/highlights";
+// import carsData from "@/mocks/cars.json";
+// import highData from "@/mocks/highlights";
 
 // araç işlemleri
 export async function getAllCars() {
