@@ -355,7 +355,7 @@ const Sidebar = ({ filters, setFilters }) => {
                     className="w-6 h-6 "
                   />
                   <label htmlFor="3vealti" className="ml-3 w-full py-3">
-                    3.0 Ve Altı
+                    Min 3.0
                   </label>
 
                   <input
@@ -366,7 +366,7 @@ const Sidebar = ({ filters, setFilters }) => {
                     className="w-6 h-6 "
                   />
                   <label htmlFor="3veustu" className="ml-3 w-full py-3">
-                    3.0 Ve Üstü
+                    Max 3.0
                   </label>
                 </div>
               </Accordion>
@@ -384,7 +384,7 @@ const Sidebar = ({ filters, setFilters }) => {
                     className="w-6 h-6 "
                   />
                   <label htmlFor="200vealti" className="ml-3 w-full py-3">
-                    200 Ve Altı
+                    Min 200
                   </label>
 
                   <input
@@ -397,7 +397,7 @@ const Sidebar = ({ filters, setFilters }) => {
                     className="w-6 h-6 "
                   />
                   <label htmlFor="200veustu" className="ml-3 w-full py-3">
-                    200 Ve Üstü
+                    Max 200
                   </label>
                 </div>
               </Accordion>

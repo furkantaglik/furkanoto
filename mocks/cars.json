@@ -10,6 +10,7 @@
     "engine": 3.5,
     "year": "2025",
     "price": 50000,
+    "speed": 230,
     "image1": "https://assets.oneweb.mercedes-benz.com/iris/iris.png?COSY-EU-100-1713d0VXq0WFqtyO67PobzIr3eWsrrCsdRRzwQZgk4ZbMw3SGtByStsdB%25ycJtTjqNuMYax4JOroYfV8nMryayoiZGk1M4F0sJTg9BmO6PDdhoSeWfSStsdE1tcUflwfXGE2hEJ0lp%25fOB2u5EbAp3CoI5uE5ZQC3lXFkzN2Lwm7jpSohKVuzQ%25vq3ajyLRnGfYaxoOJrH1M6dn8wTqcoiZAMXM4FzmjTg9izT6PD4%25DSeWgnjtsdPyDcUfeZkXGEmijJ0lwrrOB2ZtcbApF09I5ubIYQC3Ok3kzN9tdm7jDtIhKVWIt%25vqdo%25yLRqQmYaxn0YrH1IHin8520R%256d9lo2mzlKuKwOoZ1qggDu63FmZ3MkNulKlO1OsxACeqUx4Wg3yZ3&imgt=P27&bkgnd=9&pov=BE140&uni=cs&im=Crop,rect=(0,0,1450,750),gravity=Center;Resize,width=250",
     "image2": "https://assets.oneweb.mercedes-benz.com/iris/iris.png?COSY-EU-100-1713d0VXqaJeqtyO67PobzIr3eWsrrCsdRRzwQZgk4ZbMw3SGtGyWtsd2HdcUfpOkXGEubSJ0l36xOB2qBEbApRAoI5ux6YQC30CQkzNBlNm7j86ohKViKw%25vqmykyLRsGfYaxUbdrH1Gm%25n8w0h4oiZBepM4FvIFTg9Lt26PDa1FSeWHnStsd8c%25cUfiA1XGE5YrJbXSqxVN6n8wPbIoTnlR4M6or8JTg9vx96PDK%25jSeWgKhtsdR4zcUfGUyXGE0aRJ0lBHAOB2A8nbAp5PpI5gZ8lXhRjwQZz3BlwCuoQ3pE77V9hDNt3DkSW9wUwopoL24PvEa2zq7DJ3D&imgt=P27&bkgnd=9&pov=BE140&uni=cs&im=Crop,rect=(0,0,1450,750),gravity=Center;Resize,width=250",
     "image3": "https://assets.oneweb.mercedes-benz.com/iris/iris.png?COSY-EU-100-1713d0VXqNEFqtyO67PobzIr3eWsrrCsdRRzwQZg9BZbMw3SGtGyWtsd2sDcUfp8fXGEuiRJ0l3ItOB2NQObApjTXI5uV62QC3qXFkzNwzwm7jZcohKV5SF%25vqCv%25yLRzOVYaxPXWrH1eJ1n8ws8WoiZUqxM4FGQlTg9ozZ6PDMcoSeWTtMtsd7vVcUfK8jXGEvTSJ0lL%25lOB2Pr2bApetbI5uscDQC3UkTkzNGLwm7j0afhKV3XF%25vq8cXyr%25kWfDFQJ0lCrnOIJRdAbQOX09I5ug6FQC3DfMkzN7Pbm7jKevhKVvsN%25vqLJcyLRa3mYaBEUVmMDZfrE820VxHxXr1RjiiF2MpwQ1pnIu2fzfXRXPq0Agjeq89iph1p&imgt=P27&bkgnd=9&pov=BE140&uni=cs&im=Crop,rect=(0,0,1450,750),gravity=Center;Resize,width=250"
@@ -25,6 +26,7 @@
     "engine": 6.8,
     "year": "2024",
     "price": 45000,
+    "speed": 200,
     "image1": "https://assets.oneweb.mercedes-benz.com/iris/iris.png?COSY-EU-100-1713d0VXqNpFqtyO67PobzIr3eWsrrCsdRRzwQZg9BZbMw3SGtGyWtsd2sDcUfp8fXGEuiRJ0l3ItOB2NQObApjTXI5uVcZQC3qkWkzNwzwm7jZcohKV5SF%25vqCv%25yLRzOVYaxPXWrH1eHDn8wsocoiZrb1M4FnKrTg9o6n6PDCLuSeWznMtsd7oGcUfKmcXGE4yEJ0lg0VOB2PSObApet9I5usQMQC3Uv1kzNGLdm7jaSthymI9WFwbcUfAyYXOcVD0JbXtUZOB2gQ2bAp4dDI5u9BRQC3zCTkzN7Pbm7jKevhKVvYW%25vqLJcyLRa3mYaxHkWrH18nRn8520R%256d9lo25YvRu0wOoZ1qggDu63FmZ3MkNulKlO1OsxACeqUx4Wg3yZ3&imgt=P27&bkgnd=9&pov=BE140&uni=cs&im=Crop,rect=(0,0,1450,750),gravity=Center;Resize,width=250",
     "image2": "https://assets.oneweb.mercedes-benz.com/bbd/images/v1/5719/c/bd/917ab8540b1a0069863ecc198610780fa9b0f.png?im=Crop,rect=(70,35,460,260);Resize,width=250",
     "image3": "https://assets.oneweb.mercedes-benz.com/iris/iris.png?COSY-EU-100-1713d0VXqNEFqtyO67PobzIr3eWsrrCsdRRzwQZxkIZbMw3SGtGyWtsd2sDcUfp8fXGEuiRJ0l3ItOB2NQObApjTXI5uVcZQC3qkWkzNwzwm7jZcohKV5SF%25vqCv%25yLRzOVYaxPXWrH1eHDn8wsofoiZUIEM4FnCwTg9otn6PDMSoSeWza3tsd7oTcUfKmcXGE4yEJ0lg6JOB2PSFbApeIoI5usKDQC32S1kzNL6Sm%25kbFDZ1OtsdB%25ycJtj9GXOcSswJ0l4IlOB2iMwbApFjzI5uC4JQC3zg7kzN7Pum7jKcShKVvpQ%25vGdeNQnF1WydGmC5qLqtyRV3HHwEnlxbRlYO2EW5WtVt4jU0i3gjaZHlkRl&imgt=P27&bkgnd=9&pov=BE140&uni=cs&im=Crop,rect=(0,0,1450,750),gravity=Center;Resize,width=250"

@@ -54,13 +54,14 @@ const Admin = () => {
     };
   }, [message]);
 
-
   //!form değişikliklerini kontrol
   const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
+    if (e.target.value !== false) {
+      setFormData({
+        ...formData,
+        [e.target.name]: e.target.value,
+      });
+    }
   };
 
   return (
