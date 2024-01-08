@@ -1,7 +1,7 @@
 "use client";
 import { AiOutlineArrowRight, AiOutlineArrowLeft } from "react-icons/ai";
 import { useEffect, useRef, useState } from "react";
-import { getAllHighlights } from "@/utils/functions/Datafetcher";
+import { getAllHighlights } from "@/lib/functions";
 import Link from "next/link";
 
 const Slider = () => {
@@ -52,7 +52,7 @@ const Slider = () => {
           className="flex md:overflow-hidden overflow-y-auto md:gap-x-5 gap-x-2 pb-3"
           ref={contentRef}
         >
-          {highlights.map((high, index) => (
+          {highlights?.map((high, index) => (
             <div key={index + 1} className="flex-shrink-0 xl:w-1/3 xs:w-1/2">
               {/* <Link href={`Detail/${high.url}`}> */}
               <img src={high.image} alt={high.title} />
@@ -100,7 +100,7 @@ const Slider = () => {
         </div>
 
         <div className="hidden md:block justify-center mt-4">
-          {highlights.map((high, index) => (
+          {highlights?.map((high, index) => (
             <button
               key={index + 1}
               onClick={() => previewImage(index)}

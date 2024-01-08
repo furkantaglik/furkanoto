@@ -1,27 +1,11 @@
-"use client";
-import Maincars from "@/components/Maincars";
+import { getSavedCars } from "@/lib/functions";
 import Link from "next/link";
-import { getSavedCars } from "@/utils/functions/Datafetcher";
-import { auth } from "@/utils/Firebase";
-import { useEffect, useState } from "react";
+import { auth } from "@clerk/nextjs";
+import Maincars from "@/components/Maincars";
 
-const SavedContainer = () => {
-  const [savedCars, setSavedCars] = useState([]);
-
-  useEffect(() => {
-    const fetchSavedCars = async (user) => {
-      try {
-        const cars = await getSavedCars(user.uid);
-        setSavedCars(cars);
-      } catch (error) {}
-    };
-
-    const user = auth.currentUser;
-    if (user) {
-      fetchSavedCars(user);
-    }
-  }, [savedCars]);
-
+const SavedContainer = async () => {
+  const { userId } = auth();
+  const savedCars = await getSavedCars(userId);
   return (
     <section className=" max-w-screen-2xl mx-auto mt-20 mb-96">
       {savedCars.length > 0 ? (

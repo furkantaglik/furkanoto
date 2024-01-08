@@ -1,46 +1,19 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import {
   addHighlight,
   deleteHighlight,
   updateHighlight,
-  getAllHighlights,
-} from "@/utils/functions/Datafetcher";
+} from "@/lib/functions";
 import Link from "next/link";
 
-const Highlights = () => {
-  const [highlightsData, setHighlightsData] = useState([]);
-  const [message, setMessage] = useState("");
+const HighForm = ({ highData }) => {
   const [formData, setFormData] = useState({
     title: "",
     description: "",
     url: "",
     image: "",
   });
-
-  // veriler çekilir
-  useEffect(() => {
-    async function fetchData() {
-      const data = await getAllHighlights();
-      setHighlightsData(data);
-    }
-    fetchData();
-  }, [highlightsData]);
-
-  //durum mesajının süresi
-  useEffect(() => {
-    let timer;
-
-    if (message) {
-      timer = setTimeout(() => {
-        setMessage("");
-      }, 5000);
-    }
-
-    return () => {
-      clearTimeout(timer);
-    };
-  }, [message]);
 
   const handleChange = (e) => {
     setFormData({
@@ -52,37 +25,29 @@ const Highlights = () => {
   return (
     <section className=" max-w-screen-xl mx-auto md:mt-16 mb-20">
       <Link
-        href="/Dashboard"
+        href="/Admin/Cars"
         className="p-2 flex w-fit font-semibold md:float-right border-b-2 hover:border-black "
       >
-        Dashboard'a Git
+        Araçlara Git
       </Link>
-      {/* Durum mesajı */}
-      {message && (
-        <div className="absolute md:top-24 text-center  md:left-1/2 md:right-1/4  transform md:-translate-x-1/2 right-5 top-20">
-          <div className="font-semibold bg-blue-200 rounded-md inline-block text-blue-600 p-2">
-            {message}
-          </div>
-        </div>
-      )}
 
       {/* Kontroller  */}
 
       <div className="grid grid-cols-3 mx-auto md:w-2/3 gap-x-5 gap-y-5 lg:gap-y-0 p-3 my-10 bg-gray-300 rounded-lg font-bold">
         <button
-          onClick={() => addHighlight(formData, setMessage)}
+          onClick={() => addHighlight(formData)}
           className=" py-3   bg-black text-gray-300 hover:text-white"
         >
           EKLE
         </button>
         <button
-          onClick={() => deleteHighlight(formData, setMessage)}
+          onClick={() => deleteHighlight(formData)}
           className=" py-3   bg-black text-gray-300 hover:text-white"
         >
           SİL
         </button>
         <button
-          onClick={() => updateHighlight(formData, setMessage)}
+          onClick={() => updateHighlight(formData)}
           className=" py-3   bg-black text-gray-300 hover:text-white"
         >
           GÜNCELLE
@@ -123,7 +88,7 @@ const Highlights = () => {
           </label>
           <input
             type="text"
-            name="resim"
+            name="image"
             onChange={handleChange}
             value={formData.image}
             className="w-full border rounded px-2 py-1 text-black"
@@ -148,7 +113,7 @@ const Highlights = () => {
       <aside className="bg-slate-200 p-3 rounded-md">
         <h2 className="text-xl font-bold text-center mb-5">Öne Çıkanlar</h2>
         <div className="flex space-x-16 overflow-x-scroll">
-          {highlightsData.map((high, index) => (
+          {highData?.map((high, index) => (
             <>
               <div className="flex-none w-64 " key={high.id}>
                 <button
@@ -173,4 +138,4 @@ const Highlights = () => {
   );
 };
 
-export default Highlights;
+export default HighForm;

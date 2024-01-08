@@ -1,9 +1,8 @@
 "use client";
 import Link from "next/link";
 import { useState, useEffect } from "react";
-import { setSavedCar, savedStatus } from "@/utils/functions/Datafetcher";
+import { setSavedCar, savedStatus } from "@/lib/functions";
 import { MdFavorite, MdFavoriteBorder } from "react-icons/md";
-import { auth } from "@/utils/Firebase";
 
 const Card = ({ id, marka, model, yakit, fiyat, resim1, resim2, resim3 }) => {
   const [image, setImage] = useState(resim1);
@@ -12,12 +11,17 @@ const Card = ({ id, marka, model, yakit, fiyat, resim1, resim2, resim3 }) => {
   useEffect(() => {
     const fetchSavedStatus = async () => {
       try {
-        const user = auth.currentUser;
-        if (user) {
-          const status = await savedStatus(user.uid, id);
+        // const user = await currentUser();
+        if (true) {
+          const status = await savedStatus(
+            "user_2aa1UrWLEdAU5EfrGlH2AnjLi49",
+            id
+          );
           setIsSaved(status);
         }
-      } catch (error) {}
+      } catch (error) {
+        console.error(error);
+      }
     };
 
     fetchSavedStatus();
@@ -25,10 +29,10 @@ const Card = ({ id, marka, model, yakit, fiyat, resim1, resim2, resim3 }) => {
 
   const saveControl = async () => {
     try {
-      const user = auth.currentUser;
+      // const user = await currentUser();
 
-      if (user) {
-        await setSavedCar(user.uid, id);
+      if (true) {
+        await setSavedCar("user_2aa1UrWLEdAU5EfrGlH2AnjLi49", id);
         setIsSaved(!isSaved);
       }
     } catch (error) {}

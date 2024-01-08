@@ -1,18 +1,10 @@
 "use client";
-import { useState, useEffect } from "react";
-import {
-  addCar,
-  deleteCar,
-  updateCar,
-  getAllCars,
-  formatDate,
-} from "@/utils/functions/Datafetcher";
+import { useState } from "react";
+import { addCar, deleteCar, updateCar } from "@/lib/functions";
 import Link from "next/link";
 
-const Admin = () => {
+const CarsForm = ({ carsData }) => {
   const [openSideBar, setOpenSideBar] = useState(false);
-  const [carsData, setCarsData] = useState([]);
-  const [message, setMessage] = useState("");
   const [formData, setFormData] = useState({
     brand: "Mercedes",
     model: "",
@@ -30,30 +22,6 @@ const Admin = () => {
     description: "",
   });
 
-  // Veriler çekilir ve izlenir
-  useEffect(() => {
-    async function fetchData() {
-      const data = await getAllCars();
-      setCarsData(data);
-    }
-    fetchData();
-  }, [carsData]);
-
-  //durum mesajının süresi
-  useEffect(() => {
-    let timer;
-
-    if (message) {
-      timer = setTimeout(() => {
-        setMessage("");
-      }, 5000);
-    }
-
-    return () => {
-      clearTimeout(timer);
-    };
-  }, [message]);
-
   //!form değişikliklerini kontrol
   const handleChange = (e) => {
     if (e.target.value !== false) {
@@ -67,37 +35,28 @@ const Admin = () => {
   return (
     <section className="max-w-screen-xl mx-auto md:mt-16 mb-20">
       <Link
-        href="/Highlights"
+        href="/Admin/Highlights"
         className="p-2 flex w-fit font-semibold md:float-right border-b-2 hover:border-black "
       >
         Öne Çıkanlara Git
       </Link>
 
-      {/* Durum mesajı */}
-      {message && (
-        <div className="absolute md:top-24 text-center  md:left-1/2 md:right-1/4  transform md:-translate-x-1/2 right-5 top-20">
-          <div className="font-semibold bg-blue-200 rounded-md inline-block text-blue-600 p-2">
-            {message}
-          </div>
-        </div>
-      )}
-
       {/* Kontroller  */}
       <div className="grid grid-cols-2 md:grid-cols-3 mx-auto md:w-2/3 gap-x-5 gap-y-5 lg:gap-y-0 p-3 my-10 bg-gray-300 rounded-lg font-bold">
         <button
-          onClick={() => addCar(formData, setMessage)}
+          onClick={() => addCar(formData)}
           className=" py-3   bg-black text-gray-300 hover:text-white"
         >
           EKLE
         </button>
         <button
-          onClick={() => deleteCar(formData, setMessage)}
+          onClick={() => deleteCar(formData)}
           className=" py-3   bg-black text-gray-300 hover:text-white"
         >
           SİL
         </button>
         <button
-          onClick={() => updateCar(formData, setMessage)}
+          onClick={() => updateCar(formData)}
           className=" py-3   bg-black text-gray-300 hover:text-white"
         >
           GÜNCELLE
@@ -124,7 +83,7 @@ const Admin = () => {
         >
           <div className="h-full px-3 py-4 overflow-y-auto text-white bg-gray-800 rounded-lg">
             <ul className="space-y-2">
-              {carsData.map((car, index) => (
+              {carsData?.map((car, index) => (
                 <li key={index}>
                   <button
                     onClick={() => {
@@ -360,7 +319,7 @@ const Admin = () => {
             <input
               type="text"
               name="created_at"
-              value={formatDate(formData.created_at?.seconds) ?? ""}
+              // value={formatDate(formData.created_at?.seconds) ?? ""}
               readOnly
               className="w-full border bg-neutral-400 rounded px-2 py-1 text-black"
             />
@@ -372,7 +331,7 @@ const Admin = () => {
             <input
               type="text"
               name="updated_at"
-              value={formatDate(formData.updated_at?.seconds) ?? ""}
+              // value={formatDate(formData.updated_at?.seconds) ?? ""}
               readOnly
               className="w-full border bg-neutral-400 rounded px-2 py-1 text-black"
             />
@@ -383,4 +342,4 @@ const Admin = () => {
   );
 };
 
-export default Admin;
+export default CarsForm;
