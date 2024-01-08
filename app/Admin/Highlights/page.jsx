@@ -1,6 +1,10 @@
 import HighForm from "@/components/admin/HighForm";
 import { getAllHighlights } from "@/lib/functions";
 
+export const metadata = {
+  title: "Admin Sayfası",
+};
+
 const AdminPage = async () => {
   const highData = await getAllHighlights();
   return (

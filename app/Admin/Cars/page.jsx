@@ -1,6 +1,10 @@
 import CarsForm from "@/components/admin/CarsForm";
 import { getAllCars } from "@/lib/functions";
 
+export const metadata = {
+  title: "Admin Sayfası",
+};
+
 const AdminPage = async () => {
   const carsData = await getAllCars();
   return (

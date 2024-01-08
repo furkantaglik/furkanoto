@@ -4,9 +4,9 @@ import { useEffect, useRef, useState } from "react";
 import { getAllHighlights } from "@/lib/functions";
 import Link from "next/link";
 
+
 const Slider = () => {
   const [highlights, setHighlights] = useState([]);
-
   useEffect(() => {
     const fetchData = async () => {
       const data = await getAllHighlights();

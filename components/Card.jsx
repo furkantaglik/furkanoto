@@ -1,52 +1,13 @@
 "use client";
 import Link from "next/link";
-import { useState, useEffect } from "react";
-import { setSavedCar, savedStatus } from "@/lib/functions";
-import { MdFavorite, MdFavoriteBorder } from "react-icons/md";
+import { useState } from "react";
+import LikeButton from "./LikeButton";
 
 const Card = ({ id, marka, model, yakit, fiyat, resim1, resim2, resim3 }) => {
   const [image, setImage] = useState(resim1);
-  const [isSaved, setIsSaved] = useState(false);
-
-  useEffect(() => {
-    const fetchSavedStatus = async () => {
-      try {
-        // const user = await currentUser();
-        if (true) {
-          const status = await savedStatus(
-            "user_2aa1UrWLEdAU5EfrGlH2AnjLi49",
-            id
-          );
-          setIsSaved(status);
-        }
-      } catch (error) {
-        console.error(error);
-      }
-    };
-
-    fetchSavedStatus();
-  }, [id]);
-
-  const saveControl = async () => {
-    try {
-      // const user = await currentUser();
-
-      if (true) {
-        await setSavedCar("user_2aa1UrWLEdAU5EfrGlH2AnjLi49", id);
-        setIsSaved(!isSaved);
-      }
-    } catch (error) {}
-  };
-
   return (
     <section className="hover:bg-gray-100 p-5 h-fit w-fit group transition duration-100 cursor-pointer">
-      <button onClick={saveControl} className="float-right">
-        {isSaved ? (
-          <MdFavorite className="w-5 h-5 rounded-full hover:bg-red-500" />
-        ) : (
-          <MdFavoriteBorder className="w-5 h-5 rounded-full hover:bg-red-500" />
-        )}
-      </button>
+     <LikeButton carId={id} />
       <div className="text-center">
         <h2 className="text-md md:text-lg font-medium mb-2 font-serif">
           {" "}
