@@ -11,7 +11,7 @@ const Footer = () => {
     <footer className="bg-black p-10 mx-auto max-w-screen-2xl h-full text-gray-300">
       <div className="text-white text-center ease-in-out animate-bounce">
         <button onClick={scrollToTop}>
-          <AiOutlineArrowUp className="flex mx-auto" />{" "}
+          <AiOutlineArrowUp className="flex mx-auto" />
           <span className="">Başa Dön</span>
         </button>
       </div>
@@ -24,29 +24,25 @@ const Footer = () => {
             href="#"
             className="hover:text-white border-b border-black hover:border-white hover:border-b w-fit"
           >
-            {" "}
-            Modellere genel bakış{" "}
+            Modellere genel bakış
           </Link>
           <Link
             href="#"
             className="hover:text-white border-b border-black hover:border-white hover:border-b w-fit"
           >
-            {" "}
-            Elektrikli Otomobiller{" "}
+            Elektrikli Otomobiller
           </Link>
           <Link
             href="#"
             className="hover:text-white border-b border-black hover:border-white hover:border-b w-fit"
           >
-            {" "}
-            Konfiguratör{" "}
+            Konfiguratör
           </Link>
           <Link
             href="#"
             className="hover:text-white border-b border-black hover:border-white hover:border-b w-fit"
           >
-            {" "}
-            Test Sürüşü{" "}
+            Test Sürüşü
           </Link>
         </div>
 
@@ -56,29 +52,25 @@ const Footer = () => {
             href="#"
             className="hover:text-white border-b border-black hover:border-white hover:border-b w-fit"
           >
-            {" "}
             Satış Kampanyaları
           </Link>
           <Link
             href="#"
             className="hover:text-white border-b border-black hover:border-white hover:border-b w-fit"
           >
-            {" "}
             Online Store
           </Link>
           <Link
             href="#"
             className="hover:text-white border-b border-black hover:border-white hover:border-b w-fit"
           >
-            {" "}
-            Kullanılmış Araçlar{" "}
+            Kullanılmış Araçlar
           </Link>
           <Link
             href="#"
             className="hover:text-white border-b border-black hover:border-white hover:border-b w-fit"
           >
-            {" "}
-            Showroom arama{" "}
+            Showroom arama
           </Link>
         </div>
 
@@ -88,61 +80,53 @@ const Footer = () => {
             href="#"
             className="hover:text-white border-b border-black hover:border-white hover:border-b w-fit"
           >
-            {" "}
-            Elektromobilite{" "}
+            Elektro mobilite
           </Link>
           <Link
             href="#"
             className="hover:text-white border-b border-black hover:border-white hover:border-b w-fit"
           >
-            {" "}
-            Sürdürülebilirlik{" "}
+            Sürdürüle bilirlik
           </Link>
           <Link
             href="#"
             className="hover:text-white border-b border-black hover:border-white hover:border-b w-fit"
           >
-            {" "}
-            Akıllı Sürüş{" "}
+            Akıllı Sürüş
           </Link>
           <Link
             href="#"
             className="hover:text-white border-b border-black hover:border-white hover:border-b w-fit"
           >
-            {" "}
-            Mbux{" "}
+            Mbux
           </Link>
         </div>
 
         <div className="grid grid-cols-1 gap-y-3">
-          <h2 className="text-white text-lg mb-3">Furkan Otomobil</h2>
+          <h2 className="text-white text-lg mb-3">Biz</h2>
           <Link
             href="#"
             className="hover:text-white border-b border-black hover:border-white hover:border-b w-fit"
           >
-            {" "}
             Biz Kimiz
           </Link>
           <Link
             href="#"
             className="hover:text-white border-b border-black hover:border-white hover:border-b w-fit"
           >
-            {" "}
             Neden biz
           </Link>
           <Link
             href="#"
             className="hover:text-white border-b border-black hover:border-white hover:border-b w-fit"
           >
-            {" "}
-            Hakkımızıda{" "}
+            Hakkımızıda
           </Link>
           <Link
             href="#"
             className="hover:text-white border-b border-black hover:border-white hover:border-b w-fit"
           >
-            {" "}
-            Gelecek Planlarımız{" "}
+            Gelecek Planlarımız
           </Link>
         </div>
       </section>

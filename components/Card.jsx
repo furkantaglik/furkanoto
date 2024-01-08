@@ -7,19 +7,22 @@ const Card = ({ id, marka, model, yakit, fiyat, resim1, resim2, resim3 }) => {
   const [image, setImage] = useState(resim1);
   return (
     <section className="hover:bg-gray-100 p-5 h-fit w-fit group transition duration-100 cursor-pointer">
-     <LikeButton carId={id} />
+      <LikeButton carId={id} />
       <div className="text-center">
         <h2 className="text-md md:text-lg font-medium mb-2 font-serif">
-          {" "}
-          <span className="font-bold">{marka} </span> {model}
+          <span className="font-bold">{marka} </span>
+          {model}
         </h2>
         <span className="bg-gray-200 rounded-full px-2 text-sm text-gray-700">
           {yakit}
         </span>
       </div>
       <Link href={`Detail/${id}`}>
-        <img src={image} alt="" className="w-[300px] md:h-[150px] h-[120px] " />
+        <img src={image} alt="" className="w-[300px] h-[150px]" />
       </Link>
+      <h2 className="font-medium px-6 bg-slate-900 text-white w-fit mx-auto rounded-b-full">
+        {fiyat} ₺
+      </h2>
       <div className=" text-center pt-2 md:opacity-0 group-hover:opacity-100 transition duration-100">
         <div className="flex justify-center items-center gap-x-5 mb-2">
           <button
@@ -41,9 +44,6 @@ const Card = ({ id, marka, model, yakit, fiyat, resim1, resim2, resim3 }) => {
             }`}
           ></button>
         </div>
-        <h2 className="font-medium px-6 bg-slate-900 text-white w-fit mx-auto rounded-b-full">
-          {fiyat} ₺
-        </h2>
       </div>
     </section>
   );

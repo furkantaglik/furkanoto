@@ -4,9 +4,11 @@ import { useEffect, useRef, useState } from "react";
 import { getAllHighlights } from "@/lib/functions";
 import Link from "next/link";
 
-
 const Slider = () => {
   const [highlights, setHighlights] = useState([]);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const contentRef = useRef(null);
+
   useEffect(() => {
     const fetchData = async () => {
       const data = await getAllHighlights();
@@ -15,10 +17,6 @@ const Slider = () => {
 
     fetchData();
   }, []);
-
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
-
-  const contentRef = useRef(null);
 
   const nextImage = () => {
     if (currentImageIndex < highlights.length - 2) {
@@ -41,7 +39,6 @@ const Slider = () => {
       behavior: "smooth",
     });
   };
-
   return (
     <section className="max-w-screen-2xl mx-auto w-full mb-16">
       <div className="relative md:mx-20 mx-2">
@@ -53,26 +50,18 @@ const Slider = () => {
           ref={contentRef}
         >
           {highlights?.map((high, index) => (
-            <div key={index + 1} className="flex-shrink-0 xl:w-1/3 xs:w-1/2">
-              {/* <Link href={`Detail/${high.url}`}> */}
-              <img src={high.image} alt={high.title} />
-              {/* </Link> */}
-              <div className="border-2 border-slate-300 md:p-3 p-1 flex flex-col h-80  xl:h-64">
-                <h1 className="text-xl font-bold mb-2 ">{high.title}</h1>
-                <p className={`md:font-lg max-w-96 xs:w-full`}>
-                  {window.innerWidth <= 400
-                    ? high.description.length > 90
-                      ? `${high.description.slice(0, 90)}...`
-                      : high.description
-                    : window.innerWidth <= 768
-                    ? high.description.length > 180
-                      ? `${high.description.slice(0, 180)}...`
-                      : high.description
-                    : high.description.length > 250
-                    ? `${high.description.slice(0, 250)}...`
-                    : high.description}
+            <div
+              key={index + 1}
+              className=" flex-shrink-0 w-full xs:w-1/2 xl:w-1/3 "
+            >
+              <div className="border-2 border-slate-300 w-fit p-1 flex flex-col h-full xl:h-full">
+                <img src={high.image} alt={high.title} />
+                <h1 className="md:text-xl text-lg font-bold mb-2 text-center ">
+                  {high.title}
+                </h1>
+                <p className={`md:text-lg text-sm text-center`}>
+                  {high.description}
                 </p>
-
                 <Link
                   href={`Detail/${high.url}`}
                   className="py-1 mx-3 md:mx-10 text-center bg-blue-600 hover:bg-blue-700 text-white font-semibold mt-auto"
