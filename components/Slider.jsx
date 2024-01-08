@@ -16,7 +16,7 @@ const Slider = () => {
     };
 
     fetchData();
-  }, []);
+  }, [highlights]);
 
   const nextImage = () => {
     if (currentImageIndex < highlights.length - 2) {
