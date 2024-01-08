@@ -45,7 +45,7 @@ const Sidebar = ({ filters, setFilters }) => {
       )}
 
       <aside
-        className={`fixed md:sticky top-16 md:top-20 left-0 z-10 w-[300px] h-screen transition-transform  max-w-screen-2xl  ${
+        className={`fixed md:sticky top-16 md:top-20 left-0 z-10 w-[300px]  transition-transform  max-w-screen-2xl  ${
           openSideMenu ? "translate-x-0" : "-translate-x-full"
         } md:translate-x-0`}
       >
