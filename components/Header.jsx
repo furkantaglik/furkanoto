@@ -3,7 +3,6 @@ import SearchBar from "./SearchBar";
 import Link from "next/link";
 import { BsSave2Fill } from "react-icons/bs";
 import { SignedIn, SignedOut, SignInButton, UserButton } from "@clerk/nextjs";
-import SavedContainer from "@/container/SavedContainer";
 
 const Header = () => {
   return (
@@ -32,13 +31,11 @@ const Header = () => {
             <UserButton afterSignOutUrl="/">
               <UserButton.UserProfilePage label="account" />
               <UserButton.UserProfilePage label="security" />
-              <UserButton.UserProfilePage
+              <UserButton.UserProfileLink
                 label="Favoriler"
                 url="/Saved"
                 labelIcon={<BsSave2Fill />}
-              >
-                <SavedContainer />
-              </UserButton.UserProfilePage>
+              />
             </UserButton>
           </SignedIn>
           <SignedOut>
