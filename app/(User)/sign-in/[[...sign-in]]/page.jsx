@@ -6,7 +6,7 @@ export const metadata = {
 
 const SignInPage = () => {
   return (
-    <section className=" lex flex-1 w-fit justify-center items-center mx-auto mt-20 mb-60">
+    <section className="flex flex-1 w-fit justify-center items-center mx-auto mt-5 md:mt-10 mb-60">
       <SignIn />
     </section>
   );
