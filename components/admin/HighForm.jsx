@@ -1,10 +1,6 @@
 "use client";
 import { useState } from "react";
-import {
-  addHighlight,
-  deleteHighlight,
-  updateHighlight,
-} from "@/lib/functions";
+import { addHighlight, deleteHighlight, updateHighlight } from "@/lib/actions";
 import Link from "next/link";
 
 const HighForm = ({ highData }) => {

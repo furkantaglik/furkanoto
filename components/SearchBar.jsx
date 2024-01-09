@@ -1,7 +1,7 @@
 "use client";
 import { BiSearchAlt2 } from "react-icons/bi";
 import { useState } from "react";
-import { getSearchResults } from "@/lib/functions";
+import { getSearchResults } from "@/lib/actions";
 import Link from "next/link";
 
 const SearchBar = () => {

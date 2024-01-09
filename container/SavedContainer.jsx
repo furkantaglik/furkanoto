@@ -1,4 +1,4 @@
-import { getSavedCars } from "@/lib/functions";
+import { getSavedCars } from "@/lib/actions";
 import { auth } from "@clerk/nextjs";
 import Maincars from "@/components/Maincars";
 

@@ -1,5 +1,5 @@
 import HighForm from "@/components/admin/HighForm";
-import { getAllHighlights } from "@/lib/functions";
+import { getAllHighlights } from "@/lib/actions";
 
 export const metadata = {
   title: "Admin Sayfası",

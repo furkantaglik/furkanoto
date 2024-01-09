@@ -1,5 +1,5 @@
 import DetailContainer from "@/container/DetailContainer";
-import { getAllCars } from "@/lib/functions";
+import { getAllCars } from "@/lib/actions";
 
 export async function generateMetadata({ params }) {
   const carsData = await getAllCars();

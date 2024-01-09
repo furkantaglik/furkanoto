@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
-import { addCar, deleteCar, updateCar } from "@/lib/functions";
+import { addCar, deleteCar, updateCar } from "@/lib/actions";
+import { formatDate } from "@/lib/helpers";
 import Link from "next/link";
 
 const CarsForm = ({ carsData }) => {
@@ -19,6 +20,8 @@ const CarsForm = ({ carsData }) => {
     image2: "",
     image3: "",
     speed: "",
+    createdAt: "",
+    updatedAt: "",
     description: "",
   });
 
@@ -313,27 +316,27 @@ const CarsForm = ({ carsData }) => {
             />
           </div>
           <div>
-            <label className="block mb-2 font-semibold" htmlFor="created_at">
+            <label className="block mb-2 font-semibold" htmlFor="createdAt">
               Oluşturma Tarihi
             </label>
             <input
               type="text"
-              name="created_at"
-              // value={formatDate(formData.created_at?.seconds) ?? ""}
+              name="createdAt"
+              value={formatDate(formData.createdAt)}
               readOnly
               className="w-full border bg-neutral-400 rounded px-2 py-1 text-black"
             />
           </div>
           <div>
-            <label className="block mb-2 font-semibold" htmlFor="updated_at">
+            <label className="block mb-2 font-semibold" htmlFor="updatedAt">
               Düzenlenme Tarihi
             </label>
             <input
               type="text"
-              name="updated_at"
-              // value={formatDate(formData.updated_at?.seconds) ?? ""}
+              name="updatedAt"
+              value={formatDate(formData.updatedAt)}
               readOnly
-              className="w-full border bg-neutral-400 rounded px-2 py-1 text-black"
+              className="w-full border bg-neutral-400 rounded px-2 py-1 text-black "
             />
           </div>
         </form>
