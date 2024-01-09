@@ -31,7 +31,7 @@ const SearchBar = () => {
         <ul className="absolute z-10">
           {results.map((result, index) => (
             <Link
-              key={index}
+              key={result.id}
               href={`/Detail/${result.id}`}
               onClick={() => {
                 setResults([]);
@@ -43,13 +43,6 @@ const SearchBar = () => {
                     className="rounded-md"
                     src={result.image1}
                     alt={result.model}
-                    quality={30}
-                    fill
-                    loading="lazy"
-                    placeholder="blur"
-                    blurDataURL="
-                                        data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mPU+Q8AAV0BLQfuLZ4AAAAASUVORK5CYII=
-                                        "
                   />
                 </div>
                 <div className="grid ms-5 gap-y-2">

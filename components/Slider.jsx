@@ -16,7 +16,7 @@ const Slider = () => {
     };
 
     fetchData();
-  }, [highlights]);
+  }, []);
 
   const nextImage = () => {
     if (currentImageIndex < highlights.length - 2) {
@@ -51,11 +51,15 @@ const Slider = () => {
         >
           {highlights?.map((high, index) => (
             <div
-              key={index + 1}
+              key={high.id}
               className=" flex-shrink-0 w-full xs:w-1/2 xl:w-1/3 "
             >
               <div className="border-2 border-slate-300 w-fit p-1 flex flex-col h-full xl:h-full">
-                <img src={high.image} alt={high.title} />
+                <img
+                  src={high.image}
+                  alt={high.title}
+                  className="h-[200px] md:h-[350px]"
+                />
                 <h1 className="md:text-xl text-lg font-bold mb-2 text-center ">
                   {high.title}
                 </h1>

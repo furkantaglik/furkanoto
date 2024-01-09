@@ -110,23 +110,21 @@ const HighForm = ({ highData }) => {
         <h2 className="text-xl font-bold text-center mb-5">Öne Çıkanlar</h2>
         <div className="flex space-x-16 overflow-x-scroll">
           {highData?.map((high, index) => (
-            <>
-              <div className="flex-none w-64 " key={high.id}>
-                <button
-                  onClick={() => {
-                    setFormData(high);
-                  }}
-                  className="py-1 px-10 w-full text-center bg-gray-600 hover:bg-gray-700 text-white font-semibold"
-                >
-                  Düzenle
-                </button>
-                <img src={high.image} alt={high.title} />
-                <div className="border-4 p-3">
-                  <h1 className="text-xl font-bold mb-2">{high.title}</h1>
-                  <p className="font-lg">{high.description}</p>
-                </div>
+            <div key={high.id} className="flex-none w-64 ">
+              <button
+                onClick={() => {
+                  setFormData(high);
+                }}
+                className="py-1 px-10 w-full text-center bg-gray-600 hover:bg-gray-700 text-white font-semibold"
+              >
+                Düzenle
+              </button>
+              <img src={high.image} alt={high.title} />
+              <div className="border-4 p-3">
+                <h1 className="text-xl font-bold mb-2">{high.title}</h1>
+                <p className="font-lg">{high.description}</p>
               </div>
-            </>
+            </div>
           ))}
         </div>
       </aside>

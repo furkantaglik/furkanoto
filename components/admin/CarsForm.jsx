@@ -87,7 +87,7 @@ const CarsForm = ({ carsData }) => {
           <div className="h-full px-3 py-4 overflow-y-auto text-white bg-gray-800 rounded-lg">
             <ul className="space-y-2">
               {carsData?.map((car, index) => (
-                <li key={index}>
+                <li key={car.id}>
                   <button
                     onClick={() => {
                       setFormData(car);
@@ -95,7 +95,7 @@ const CarsForm = ({ carsData }) => {
                     }}
                     className="flex justify-between items-center p-1 border-b hover:text-black w-full rounded-lg hover:bg-gray-300 group"
                   >
-                    <span className="font-bold">{index}</span>
+                    <span className="font-bold">{index + 1}</span>
                     <span className="ml-3 ">
                       {car.brand}: {car.model}
                     </span>
