@@ -66,7 +66,6 @@ const Slider = () => {
                 <p className={`md:text-lg text-sm text-center`}>
                   {high.description}
                 </p>
-                x
                 <Link
                   alt={high.title}
                   href={`Detail/${high.url}`}
