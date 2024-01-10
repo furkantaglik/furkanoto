@@ -36,7 +36,7 @@ export default function LikeButton({ carId }) {
 
   return (
     <>
-      <button onClick={saveControl} className="float-right">
+      <button onClick={saveControl} className="float-right" id="like">
         {isSaved ? (
           <MdFavorite className="w-5 h-5 rounded-full text-black hover:bg-black hover:text-white" />
         ) : (

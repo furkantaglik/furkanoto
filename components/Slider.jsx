@@ -58,7 +58,7 @@ const Slider = () => {
                 <img
                   src={high.image}
                   alt={high.title}
-                  className="h-[200px] md:h-[350px]"
+                  className="h-[250px] md:h-[350px]"
                 />
                 <h1 className="md:text-xl text-lg font-bold mb-2 text-center ">
                   {high.title}
@@ -66,7 +66,9 @@ const Slider = () => {
                 <p className={`md:text-lg text-sm text-center`}>
                   {high.description}
                 </p>
+                x
                 <Link
+                  alt={high.title}
                   href={`Detail/${high.url}`}
                   className="py-1 mx-3 md:mx-10 text-center bg-blue-600 hover:bg-blue-700 text-white font-semibold mt-auto"
                 >
@@ -79,12 +81,14 @@ const Slider = () => {
 
         <div className="justify-center mt-4 hidden md:block">
           <button
+            id="prevImage"
             onClick={prevImage}
             className="absolute top-2/4 text-lg left-5  md:text-2xl animate-pulse bg-neutral-500 rounded-full p-1 md:p-2"
           >
             <AiOutlineArrowLeft />
           </button>
           <button
+            id="nextImage"
             onClick={nextImage}
             className="absolute top-2/4 text-lg right-5 md:text-2xl animate-pulse bg-neutral-500 rounded-full p-1 md:p-2"
           >
@@ -95,13 +99,18 @@ const Slider = () => {
         <div className="hidden md:block justify-center mt-4">
           {highlights?.map((high, index) => (
             <button
+              id={high.title}
               key={index + 1}
               onClick={() => previewImage(index)}
               className={`w-10 rounded-full mx-2  ${
                 index === currentImageIndex ? "scale-125" : "bg-gray-300"
               }`}
             >
-              <img src={high.image} className="rounded-full " />
+              <img
+                src={high.image}
+                alt={high.title}
+                className="rounded-full "
+              />
             </button>
           ))}
         </div>

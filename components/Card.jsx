@@ -17,8 +17,8 @@ const Card = ({ id, marka, model, yakit, fiyat, resim1, resim2, resim3 }) => {
           {yakit}
         </span>
       </div>
-      <Link href={`Detail/${id}`}>
-        <img src={image} alt="" className="w-[300px] h-[150px]" />
+      <Link href={`Detail/${id}`} aria-label="detail">
+        <img src={image} alt={(marka, model)} className="w-[300px] h-[150px]" />
       </Link>
       <h2 className="font-medium px-6 bg-slate-900 text-white w-fit mx-auto rounded-b-full">
         {fiyat} ₺
@@ -26,18 +26,21 @@ const Card = ({ id, marka, model, yakit, fiyat, resim1, resim2, resim3 }) => {
       <div className=" text-center pt-2 md:opacity-0 group-hover:opacity-100 transition duration-100">
         <div className="flex justify-center items-center gap-x-5 mb-2">
           <button
+            id="firtImage"
             onClick={() => setImage(resim1)}
             className={`px-2 py-1 rounded-full ${
               image === resim1 ? "bg-blue-700" : "bg-gray-700"
             }`}
           ></button>
           <button
+            id="secondImage"
             onClick={() => setImage(resim2)}
             className={`px-2 py-1 rounded-full ${
               image === resim2 ? "bg-blue-700" : "bg-gray-700"
             }`}
           ></button>
           <button
+            id="threeImage"
             onClick={() => setImage(resim3)}
             className={`px-2 py-1 rounded-full ${
               image === resim3 ? "bg-blue-700" : "bg-gray-700"
