@@ -40,7 +40,9 @@ const Header = () => {
               <UserButton.UserProfileLink
                 label="Satın Alınanlar"
                 url="/Purchased"
-                labelIcon={<BiSolidPurchaseTag />}
+                labelIcon={
+                  <BiSolidPurchaseTag className="font-bold text-2xl" />
+                }
               />
             </UserButton>
           </SignedIn>

@@ -4,7 +4,7 @@ import { addPurchasedCar, getUserId } from "@/lib/actions";
 
 export async function POST(req) {
   try {
-    const url = req.nextUrl.clone();
+    const url = await req.nextUrl.clone();
     url.pathname = "/";
 
     const userId = await getUserId();
