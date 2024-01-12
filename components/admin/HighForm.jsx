@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { addHighlight, deleteHighlight, updateHighlight } from "@/lib/actions";
 import Link from "next/link";
+import toast from "react-hot-toast";
 
 const HighForm = ({ highData }) => {
   const [formData, setFormData] = useState({
@@ -31,19 +32,37 @@ const HighForm = ({ highData }) => {
 
       <div className="grid grid-cols-3 mx-auto md:w-2/3 gap-x-5 gap-y-5 lg:gap-y-0 p-3 my-10 bg-gray-300 rounded-lg font-bold">
         <button
-          onClick={() => addHighlight(formData)}
+          onClick={async () => {
+            const result = await addHighlight(formData);
+            console.log(result);
+            result
+              ? toast.success("Öne çıkan eklendi")
+              : toast.error("Öne çıkan eklenirken hata oluştu");
+          }}
           className=" py-3   bg-black text-gray-300 hover:text-white"
         >
           EKLE
         </button>
         <button
-          onClick={() => deleteHighlight(formData)}
+          onClick={async () => {
+            const result = await deleteHighlight(formData);
+            console.log(result);
+            result
+              ? toast.success("Öne çıkan silindi")
+              : toast.error("Öne çıkan silinirken hata oluştu");
+          }}
           className=" py-3   bg-black text-gray-300 hover:text-white"
         >
           SİL
         </button>
         <button
-          onClick={() => updateHighlight(formData)}
+          onClick={async () => {
+            const result = await updateHighlight(formData);
+            console.log(result);
+            result
+              ? toast.success("Öne çıkan güncellendi")
+              : toast.error("Öne çıkan güncellenirken hata oluştu");
+          }}
           className=" py-3   bg-black text-gray-300 hover:text-white"
         >
           GÜNCELLE

@@ -3,6 +3,7 @@ import { useState } from "react";
 import { addCar, deleteCar, updateCar } from "@/lib/actions";
 import { formatDate } from "@/lib/helpers";
 import Link from "next/link";
+import toast from "react-hot-toast";
 
 const CarsForm = ({ carsData }) => {
   const [openSideBar, setOpenSideBar] = useState(false);
@@ -47,19 +48,37 @@ const CarsForm = ({ carsData }) => {
       {/* Kontroller  */}
       <div className="grid grid-cols-2 md:grid-cols-3 mx-auto md:w-2/3 gap-x-5 gap-y-5 lg:gap-y-0 p-3 my-10 bg-gray-300 rounded-lg font-bold">
         <button
-          onClick={() => addCar(formData)}
+          onClick={async () => {
+            const result = await addCar(formData);
+            console.log(result);
+            result
+              ? toast.success("Araç eklendi")
+              : toast.error("Araç eklenirken hata oluştu");
+          }}
           className=" py-3   bg-black text-gray-300 hover:text-white"
         >
           EKLE
         </button>
         <button
-          onClick={() => deleteCar(formData)}
+          onClick={async () => {
+            const result = await deleteCar(formData);
+            console.log(result);
+            result
+              ? toast.success("Araç silindi")
+              : toast.error("Araç silinirken hata oluştu");
+          }}
           className=" py-3   bg-black text-gray-300 hover:text-white"
         >
           SİL
         </button>
         <button
-          onClick={() => updateCar(formData)}
+          onClick={async () => {
+            const result = await updateCar(formData);
+            console.log(result);
+            result
+              ? toast.success("Araç güncellendi")
+              : toast.error("Araç güncellenirken hata oluştu");
+          }}
           className=" py-3   bg-black text-gray-300 hover:text-white"
         >
           GÜNCELLE

@@ -7,6 +7,7 @@ import { GrPrevious } from "react-icons/gr";
 import { GrNext } from "react-icons/gr";
 import axios from "axios";
 import { useRouter } from "next/navigation";
+import toast from "react-hot-toast";
 
 const DetailContainer = ({ detailinfo }) => {
   const images = [detailinfo.image1, detailinfo.image2, detailinfo.image3];
@@ -16,7 +17,7 @@ const DetailContainer = ({ detailinfo }) => {
   const handleShare = () => {
     const shareUrl = window.location.href;
     copyToClipboard(shareUrl);
-    alert("Bağlantı Kopyalandı");
+    toast.success("Bağlantı Kopyalandı");
   };
 
   const copyToClipboard = (text) => {
@@ -122,20 +123,26 @@ const DetailContainer = ({ detailinfo }) => {
         <p>{detailinfo.description}</p>
       </div>
       <div className="flex items-center justify-between mx-5">
-        <button
-          onClick={handleShare}
-          className="font-bold flex text-white rounded-lg items-center gap-x-2 p-2 mt-4 bg-blue-800 hover:bg-blue-900"
-        >
-          <FaShareAlt /> Paylaş
-        </button>
+        <div className="flex gap-x-5">
+          <button
+            onClick={handleShare}
+            className="font-bold flex text-white  items-center gap-x-2 p-2 mt-4 bg-slate-700 hover:bg-slate-900"
+          >
+            <FaShareAlt /> Paylaş
+          </button>
 
-        <Link
-          href="https://wa.me/15551234567"
-          className="font-bold flex text-white rounded-lg items-center gap-x-2 p-2 mt-4 bg-green-800 hover:bg-green-900"
+          <Link
+            href="https://wa.me/15551234567"
+            className="font-bold flex text-white  items-center gap-x-2 p-2 mt-4 bg-slate-700 hover:bg-slate-800"
+          >
+            <BsWhatsapp /> İletişim
+          </Link>
+        </div>
+
+        <button
+          onClick={handlePayment}
+          className="text-white bg-gradient-to-r from-cyan-500 mt-4 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center"
         >
-          <BsWhatsapp /> İletişim
-        </Link>
-        <button onClick={handlePayment} className="p-3 bg-green-500">
           Satın al
         </button>
       </div>

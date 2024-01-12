@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { MdFavorite, MdFavoriteBorder } from "react-icons/md";
 import { getUserId, setSavedCar, savedStatus } from "@/lib/actions";
 import { useRouter } from "next/navigation";
+import toast from "react-hot-toast";
 
 export default function LikeButton({ carId }) {
   const [isSaved, setIsSaved] = useState(false);
@@ -31,7 +32,8 @@ export default function LikeButton({ carId }) {
       if (!userId) {
         return router.push("/sign-in");
       }
-      await setSavedCar(userId, carId);
+      const result = await setSavedCar(userId, carId);
+      result ? toast.success(result) : toast.error("Beklenmedik bir hata");
       setIsSaved((prev) => !prev);
     } catch (error) {
       console.error("Hata oluştu:", error);
