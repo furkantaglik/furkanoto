@@ -5,10 +5,13 @@ import { BsWhatsapp } from "react-icons/bs";
 import { FaShareAlt } from "react-icons/fa";
 import { GrPrevious } from "react-icons/gr";
 import { GrNext } from "react-icons/gr";
+import axios from "axios";
+import { useRouter } from "next/navigation";
 
 const DetailContainer = ({ detailinfo }) => {
   const images = [detailinfo.image1, detailinfo.image2, detailinfo.image3];
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const router = useRouter();
 
   const handleShare = () => {
     const shareUrl = window.location.href;
@@ -33,6 +36,16 @@ const DetailContainer = ({ detailinfo }) => {
     setCurrentImageIndex(
       (prevIndex) => (prevIndex - 1 + images.length) % images.length
     );
+  };
+
+  const handlePayment = async () => {
+    const { data } = await axios.post("/api/payment", {
+      name: ` ${detailinfo.brand}  ${detailinfo.model}`,
+      description: detailinfo.description,
+      carId: detailinfo.id,
+    });
+    router.push(data.url);
+    console.log(data);
   };
 
   return (
@@ -122,6 +135,9 @@ const DetailContainer = ({ detailinfo }) => {
         >
           <BsWhatsapp /> İletişim
         </Link>
+        <button onClick={handlePayment} className="p-3 bg-green-500">
+          Satın al
+        </button>
       </div>
     </div>
   );

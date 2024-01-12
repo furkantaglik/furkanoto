@@ -2,6 +2,7 @@
 import SearchBar from "./SearchBar";
 import Link from "next/link";
 import { BsSave2Fill } from "react-icons/bs";
+import { BiSolidPurchaseTag } from "react-icons/bi";
 import { SignedIn, SignedOut, SignInButton, UserButton } from "@clerk/nextjs";
 
 const Header = () => {
@@ -35,6 +36,11 @@ const Header = () => {
                 label="Favoriler"
                 url="/Saved"
                 labelIcon={<BsSave2Fill />}
+              />
+              <UserButton.UserProfileLink
+                label="Satın Alınanlar"
+                url="/Purchased"
+                labelIcon={<BiSolidPurchaseTag />}
               />
             </UserButton>
           </SignedIn>

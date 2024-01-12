@@ -44,3 +44,9 @@ model Saved {
   carId  String
   userId String
 }
+
+model Purchased {
+  id     String @id @default(uuid())
+  userId String
+  carId  String
+}

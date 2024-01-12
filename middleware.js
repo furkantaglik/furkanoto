@@ -14,8 +14,12 @@ export default authMiddleware({
     if (!auth.userId && req.nextUrl.pathname === "/Saved") {
       return redirectToSignIn({ returnBackUrl: req.url });
     }
+
+    if (!auth.userId && req.nextUrl.pathname === "/Purchased") {
+      return redirectToSignIn({ returnBackUrl: req.url });
+    }
   },
-  publicRoutes: ["/","/Saved"],
+  publicRoutes: ["/", "/Saved", "/Purchased", /api\/.*/, /Detail\/.*/],
 });
 
 export const config = {

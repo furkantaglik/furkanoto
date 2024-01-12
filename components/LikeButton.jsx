@@ -1,10 +1,12 @@
 "use client";
-import { getUserId, setSavedCar, savedStatus } from "@/lib/actions";
+import { useState, useEffect } from "react";
 import { MdFavorite, MdFavoriteBorder } from "react-icons/md";
-import { useEffect, useState } from "react";
+import { getUserId, setSavedCar, savedStatus } from "@/lib/actions";
+import { useRouter } from "next/navigation";
 
 export default function LikeButton({ carId }) {
   const [isSaved, setIsSaved] = useState(false);
+  const router = useRouter();
 
   useEffect(() => {
     const fetchData = async () => {
@@ -13,6 +15,7 @@ export default function LikeButton({ carId }) {
         if (userId) {
           const status = await savedStatus(userId, carId);
           setIsSaved(status);
+          return false;
         }
       } catch (error) {
         console.error("Hata oluştu:", error);
@@ -25,10 +28,11 @@ export default function LikeButton({ carId }) {
   const saveControl = async () => {
     try {
       const userId = await getUserId();
-      if (userId) {
-        await setSavedCar(userId, carId);
-        setIsSaved(!isSaved);
+      if (!userId) {
+        return router.push("/sign-in");
       }
+      await setSavedCar(userId, carId);
+      setIsSaved((prev) => !prev);
     } catch (error) {
       console.error("Hata oluştu:", error);
     }
