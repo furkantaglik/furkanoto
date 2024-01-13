@@ -1,14 +1,13 @@
 "use client";
-import Link from "next/link";
 import { useState } from "react";
 import { BsWhatsapp } from "react-icons/bs";
 import { FaShareAlt } from "react-icons/fa";
 import { GrPrevious } from "react-icons/gr";
 import { GrNext } from "react-icons/gr";
-import axios from "axios";
 import { useRouter } from "next/navigation";
-import toast from "react-hot-toast";
 import { loadStripe } from "@stripe/stripe-js";
+import Link from "next/link";
+import toast from "react-hot-toast";
 
 const stripePromise = loadStripe(
   process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY
@@ -49,9 +48,11 @@ const DetailContainer = ({ detailinfo }) => {
       name: ` ${detailinfo.brand}  ${detailinfo.model}`,
       description: detailinfo.description,
       carId: detailinfo.id,
+      price: detailinfo.price,
+      image1: detailinfo.image1,
+      image2: detailinfo.image2,
     });
     router.push(data.url);
-    console.log(data);
   };
 
   return (

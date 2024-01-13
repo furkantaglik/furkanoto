@@ -32,7 +32,7 @@ export default function Confirmation() {
       <MdError className="text-red-500 text-8xl" />
       <div className=" bg-red-700 p-10 rounded-lg text-center">
         <h1 className="text-3xl font-bold">Üzgünüz :(</h1>
-        <p>"Satın alımınız sırasında Beklenmedik bir hata"</p>
+        <p>"Satın alımınız başarısız oldu"</p>
         <p className="mt-10">
           {count} saniye içinde anasayfaya yönlendirileceksiniz
         </p>
