@@ -8,6 +8,11 @@ import { GrNext } from "react-icons/gr";
 import axios from "axios";
 import { useRouter } from "next/navigation";
 import toast from "react-hot-toast";
+import { loadStripe } from "@stripe/stripe-js";
+
+const stripePromise = loadStripe(
+  process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY
+);
 
 const DetailContainer = ({ detailinfo }) => {
   const images = [detailinfo.image1, detailinfo.image2, detailinfo.image3];
