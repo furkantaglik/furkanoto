@@ -44,15 +44,26 @@ const DetailContainer = ({ detailinfo }) => {
   };
 
   const handlePayment = async () => {
-    const { data } = await axios.post("/api/payment", {
-      name: ` ${detailinfo.brand}  ${detailinfo.model}`,
-      description: detailinfo.description,
-      carId: detailinfo.id,
-      price: detailinfo.price,
-      image1: detailinfo.image1,
-      image2: detailinfo.image2,
-    });
-    router.push(data.url);
+    try {
+      const response = await fetch("/api/payment", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name: `${detailinfo.brand} ${detailinfo.model}`,
+          description: detailinfo.description,
+          carId: detailinfo.id,
+          price: detailinfo.price,
+          image1: detailinfo.image1,
+        }),
+      });
+      const data = await response.json();
+      router.push(data.url);
+    } catch (error) {
+      // console.error("Payment error:", error);
+      toast.error("Beklenmedik bir hata meydana geldi");
+    }
   };
 
   return (
