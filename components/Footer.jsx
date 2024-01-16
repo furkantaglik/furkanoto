@@ -1,19 +1,14 @@
-"use client";
 import Link from "next/link";
 import { AiOutlineArrowUp } from "react-icons/ai";
 
 const Footer = () => {
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  };
-
   return (
     <footer className="bg-black p-10 mx-auto max-w-screen-2xl h-full text-gray-300">
       <div className="text-white text-center ease-in-out animate-bounce">
-        <button onClick={scrollToTop}>
+        <Link href="/">
           <AiOutlineArrowUp className="flex mx-auto" />
           <span className="">Başa Dön</span>
-        </button>
+        </Link>
       </div>
       <hr className="my-10" />
 

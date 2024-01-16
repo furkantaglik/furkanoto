@@ -1,11 +1,10 @@
-import { Inter } from "next/font/google";
 import "./globals.css";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
-import ScrollToTop from "@/components/ScrollToTop";
+import { Inter } from "next/font/google";
 import { ClerkProvider } from "@clerk/nextjs";
 import { dark } from "@clerk/themes";
 import { Toaster } from "react-hot-toast";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -26,7 +25,6 @@ export default function RootLayout({ children }) {
           <link rel="icon" href="/favicon.ico" sizes="any" />
         </head>
         <body className={inter.className}>
-          <ScrollToTop />
           <Header />
           <main>{children}</main>
           <Footer />
