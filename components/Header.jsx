@@ -45,7 +45,7 @@ const Header = () => {
             </UserButton>
           </SignedIn>
           <SignedOut>
-            <SignInButton />
+            <Link href="/sign-in">Giriş Yap</Link>
           </SignedOut>
         </div>
       </header>
