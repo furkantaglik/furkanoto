@@ -6,7 +6,7 @@ const Accordion = ({ title, children }) => {
     <section>
       <button
         onClick={() => setOpenAcMenu(!openAcMenu)}
-        className="text-xl font-bold flex items-center p-1 w-full justify-between hover:bg-neutral-300 "
+        className="text-xl font-bold flex items-center p-1 w-full justify-between hover:bg-slate-300 rounded-lg "
       >
         {title}
         <span>

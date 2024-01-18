@@ -49,7 +49,7 @@ const Sidebar = ({ filters, setFilters }) => {
           openSideMenu ? "translate-x-0" : "-translate-x-full"
         } md:translate-x-0`}
       >
-        <div className="h-full p-5 overflow-y-auto bg-neutral-200 text-black">
+        <div className="h-full p-5 overflow-y-auto bg-slate-100 text-black">
           <button
             onClick={() => setOpenSideMenu(false)}
             className="flex justify-between md:justify-center font-semibold w-full text-2xl mb-3 border-b-2 border-gray-700"
