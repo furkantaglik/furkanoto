@@ -13,7 +13,7 @@ const Banner = () => {
         <p className="md:text-xl text-sm  md:mb-16 mb-8">Senin Yansıman !</p>
         <Link
           href="/test"
-          className="bg-slate-900 hover:bg-slate-800 md:px-10 rounded-full px-5 py-3"
+          className="bg-slate-900 hover:bg-slate-950 md:px-10 rounded-full px-5 py-3"
         >
           Keşfedin
         </Link>
