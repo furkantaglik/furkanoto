@@ -16,10 +16,10 @@ const Header = () => {
         </div>
         <Link
           href="/"
-          className="flex flex-col items-center justify-center w-1/3"
+          className="flex flex-col items-center justify-center w-1/3 group"
         >
           <img
-            className="w-[40px]"
+            className="w-[40px] group-hover:animate-spin"
             src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Mercedes-Logo.svg/1200px-Mercedes-Logo.svg.png"
             alt=""
           />

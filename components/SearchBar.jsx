@@ -13,14 +13,16 @@ const SearchBar = () => {
 
   return (
     <section className="relative">
-      <input
-        onChange={(e) => handlechange(e.target.value)}
-        type="text"
-        placeholder="Otomotiv Ara."
-        className="bg-slate-900 rounded-md p-2 text-white outline-none focus:shadow-lg focus:shadow-blue-900"
-      />
-      <div className="absolute right-1 top-1/2 transform -translate-y-1/2 border-l pl-1 border-neutral-400">
-        <BiSearchAlt2 className="text-xl text-white" />
+      <div className="group">
+        <input
+          onChange={(e) => handlechange(e.target.value)}
+          type="text"
+          placeholder="Otomotiv Ara."
+          className="bg-slate-900 rounded-md p-2 text-white outline-none focus:shadow-lg  focus:shadow-blue-900 w-full"
+        />
+        <div className="absolute right-1 top-1/2 transform -translate-y-1/2  border-l-2 pl-1 border-neutral-400 group-focus-within:border-blue-900">
+          <BiSearchAlt2 className="text-xl text-white group-focus-within:text-blue-900" />
+        </div>
       </div>
 
       <div className=" flex">

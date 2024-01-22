@@ -54,7 +54,7 @@ const Slider = () => {
               key={high.id}
               className=" flex-shrink-0 w-full xs:w-1/2 xl:w-1/3 "
             >
-              <div className="border-2 border-slate-300 w-fit p-1 flex flex-col h-full xl:h-full">
+              <div className="border-2 border-gray-300 w-fit  flex flex-col h-full xl:h-full">
                 <img
                   src={high.image}
                   alt={high.title}
@@ -69,7 +69,7 @@ const Slider = () => {
                 <Link
                   alt={high.title}
                   href={`Detail/${high.url}`}
-                  className="py-1 mx-3 md:mx-10 text-center bg-blue-600 hover:bg-blue-700 text-white font-semibold mt-auto"
+                  className="py-1 mx-3 md:mx-10 text-center rounded-t-lg bg-blue-600 hover:bg-blue-700 text-white font-semibold mt-auto"
                 >
                   Keşfedin
                 </Link>
@@ -82,14 +82,14 @@ const Slider = () => {
           <button
             id="prevImage"
             onClick={prevImage}
-            className="absolute top-2/4 text-lg left-5  md:text-2xl animate-pulse bg-neutral-500 rounded-full p-1 md:p-2"
+            className="absolute top-2/4 text-lg left-5  md:text-2xl animate-pulse bg-gray-500 rounded-full p-1 md:p-2"
           >
             <AiOutlineArrowLeft />
           </button>
           <button
             id="nextImage"
             onClick={nextImage}
-            className="absolute top-2/4 text-lg right-5 md:text-2xl animate-pulse bg-neutral-500 rounded-full p-1 md:p-2"
+            className="absolute top-2/4 text-lg right-5 md:text-2xl animate-pulse bg-gray-500 rounded-full p-1 md:p-2"
           >
             <AiOutlineArrowRight />
           </button>
