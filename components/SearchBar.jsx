@@ -5,20 +5,16 @@ import { getSearchResults } from "@/lib/actions";
 import Link from "next/link";
 
 const SearchBar = () => {
-  const [searchValue, setSearchValue] = useState("");
   const [results, setResults] = useState([]);
 
-  async function handleResults() {
-    setResults(await getSearchResults(searchValue));
-  }
+  const handlechange = async (value) => {
+    setResults(await getSearchResults(value));
+  };
 
   return (
     <section className="relative">
       <input
-        value={searchValue}
-        onChange={(e) => {
-          setSearchValue(e.target.value), handleResults();
-        }}
+        onChange={(e) => handlechange(e.target.value)}
         type="text"
         placeholder="Otomotiv Ara."
         className="bg-slate-900 rounded-md px-2 py-1 text-white outline-none border-transparent border-b-4 focus:border-blue-900"
@@ -27,9 +23,9 @@ const SearchBar = () => {
         <BiSearchAlt2 className="text-xl text-white" />
       </div>
 
-      <div className="relative flex">
-        <ul className="absolute z-10">
-          {results.map((result, index) => (
+      <div className=" flex">
+        <ul className="absolute z-10 ">
+          {results?.map((result) => (
             <Link
               key={result.id}
               href={`/Detail/${result.id}`}
@@ -37,7 +33,7 @@ const SearchBar = () => {
                 setResults([]);
               }}
             >
-              <li className="p-1 flex text-white rounded-lg bg-gradient-to-r from-black to-slate-950 hover:bg-gradient-to-r hover:from-black hover:to-blue-950 w-[400px] items-center">
+              <li className="p-1 flex text-white rounded-lg bg-gradient-to-r from-gray-900 to-slate-950 hover:bg-gradient-to-r hover:from-black hover:to-blue-950 w-[400px] items-center">
                 <div className="w-[100px] relative">
                   <img
                     className="rounded-md"
