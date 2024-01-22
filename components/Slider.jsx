@@ -40,7 +40,7 @@ const Slider = () => {
     });
   };
   return (
-    <section className="max-w-screen-2xl mx-auto w-full mb-16">
+    <section className="max-w-screen-2xl mx-auto w-full mb-16 min-h-[600px]">
       <div className="relative md:mx-20 mx-2">
         <h1 className="md:text-3xl text-xl font-bold md:my-12 my-8 border-b-4 border-blue-800">
           Öne Çıkanlar
