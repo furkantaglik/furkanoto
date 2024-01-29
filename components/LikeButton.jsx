@@ -1,7 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import { MdFavorite, MdFavoriteBorder } from "react-icons/md";
-import { getUserId, setSavedCar, savedStatus } from "@/lib/actions";
+import { getUser, setSavedCar, savedStatus } from "@/lib/actions";
 import { useRouter } from "next/navigation";
 import toast from "react-hot-toast";
 
@@ -12,11 +12,10 @@ export default function LikeButton({ carId }) {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const userId = await getUserId();
-        if (userId) {
-          const status = await savedStatus(userId, carId);
+        const user = await getUser();
+        if (user) {
+          const status = await savedStatus(user.id, carId);
           setIsSaved(status);
-          return false;
         }
       } catch (error) {
         console.error("Hata oluştu:", error);
@@ -28,11 +27,11 @@ export default function LikeButton({ carId }) {
 
   const saveControl = async () => {
     try {
-      const userId = await getUserId();
-      if (!userId) {
+      const user = await getUser();
+      if (!user) {
         return router.push("/sign-in");
       }
-      const result = await setSavedCar(userId, carId);
+      const result = await setSavedCar(user.id, carId);
       result ? toast.success(result) : toast.error("Beklenmedik bir hata");
       setIsSaved((prev) => !prev);
     } catch (error) {

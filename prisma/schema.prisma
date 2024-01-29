@@ -50,3 +50,13 @@ model Purchased {
   userId String
   carId  String
 }
+
+model Comments {
+  id        String   @id @default(uuid())
+  carId     String
+  userId    String
+  username  String
+  userImg   String
+  comment   String
+  createdAt DateTime @default(now())
+}

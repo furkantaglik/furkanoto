@@ -1,9 +1,9 @@
 import PurchasedContainer from "@/container/PurchasedContainer";
-import { getPurchasedCar, getUserId } from "@/lib/actions";
+import { getPurchasedCar, getUser } from "@/lib/actions";
 
 export default async function page() {
-  const userId = await getUserId();
-  const purchasedData = await getPurchasedCar(userId);
+  const user = await getUser();
+  const purchasedData = await getPurchasedCar(user.id);
   return (
     <>
       <PurchasedContainer pursData={purchasedData} />

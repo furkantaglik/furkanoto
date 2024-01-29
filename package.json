@@ -10,7 +10,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@clerk/nextjs": "^4.29.4",
+    "@clerk/nextjs": "^4.29.5",
     "@clerk/themes": "^1.7.9",
     "@prisma/client": "^5.8.1",
     "@stripe/react-stripe-js": "^2.4.0",
@@ -20,7 +20,7 @@
     "react-dom": "^18.2.0",
     "react-hot-toast": "^2.4.1",
     "react-icons": "^4.12.0",
-    "stripe": "^14.13.0"
+    "stripe": "^14.14.0"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.17",

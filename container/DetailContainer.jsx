@@ -8,6 +8,7 @@ import { useRouter } from "next/navigation";
 import { loadStripe } from "@stripe/stripe-js";
 import Link from "next/link";
 import toast from "react-hot-toast";
+import Comments from "@/components/Comments";
 
 const stripePromise = loadStripe(
   process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY
@@ -163,6 +164,7 @@ const DetailContainer = ({ detailinfo }) => {
           Satın al
         </button>
       </div>
+      <Comments carId={detailinfo.id} />
     </div>
   );
 };

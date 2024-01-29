@@ -1,14 +1,14 @@
 import { NextResponse, NextRequest } from "next/server";
 import { stripe } from "@/lib/stripe";
-import { addPurchasedCar, getUserId } from "@/lib/actions";
+import { addPurchasedCar, getUser } from "@/lib/actions";
 
 export async function POST(req) {
   try {
     const url = await req.nextUrl.clone();
     url.pathname = "/";
 
-    const userId = await getUserId();
-    if (!userId) {
+    const user = await getUser();
+    if (!user) {
       return NextResponse.json({ url: `${url}/sign-in` });
     }
 
@@ -28,7 +28,7 @@ export async function POST(req) {
       },
     ];
 
-    const purchased = await addPurchasedCar(userId, data.carId);
+    const purchased = await addPurchasedCar(user.id, data.carId);
     if (!purchased) {
       return NextResponse.json({ url: `${url}/Payment-Failed` });
     }
