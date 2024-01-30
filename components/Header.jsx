@@ -8,7 +8,7 @@ import { SignedIn, SignedOut, SignInButton, UserButton } from "@clerk/nextjs";
 const Header = () => {
   return (
     <>
-      <header className="sticky top-0 z-20 flex items-center max-w-screen-2xl px-2 md:px-10 py-3 mx-auto bg-black text-white  w-full">
+      <header className="sticky top-0 z-20 flex items-center max-w-screen-2xl px-2 md:px-10 py-1 mx-auto bg-black text-white  w-full">
         <div className="w-1/3 flex justify-start">
           <div className="hidden md:block">
             <SearchBar />

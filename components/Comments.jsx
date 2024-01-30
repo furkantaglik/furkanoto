@@ -8,8 +8,9 @@ import {
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { FaDeleteLeft } from "react-icons/fa6";
-import toast from "react-hot-toast";
 import { formatDate } from "@/lib/helpers";
+import { IoSend } from "react-icons/io5";
+import toast from "react-hot-toast";
 
 export default function Comments({ carId }) {
   const [value, setValue] = useState("");
@@ -68,8 +69,13 @@ export default function Comments({ carId }) {
   }, [carId]);
 
   return (
-    <section className="mt-20 max-w-screen-md  w-full  justify-center items-center border">
-      <h1 className="text-2xl font-semibold mb-5 text-center">Yorumlar</h1>
+    <section className="mt-20 max-w-screen-md  w-full   items-center border">
+      <h1 className="text-2xl font-semibold  text-center">Yorumlar</h1>
+      <p className="text-center mb-5 font-serif">
+        {comments?.length < 1
+          ? "İlk yorum yapan siz olun"
+          : `${comments?.length} adet yorum`}
+      </p>
       <div className="flex  mx-auto px-10">
         <input
           value={value}
@@ -85,9 +91,9 @@ export default function Comments({ carId }) {
         />
         <button
           onClick={handleSendComment}
-          className="p-2 bg-blue-700 hover:bg-blue-800 rounded-e-full font-bold text-white"
+          className="p-2 px-5 bg-blue-700 hover:bg-blue-800 rounded-e-full font-bold text-white"
         >
-          Gönder
+          <IoSend />
         </button>
       </div>
       <div className="mt-10 flex flex-col gap-y-10 px-5">
@@ -112,7 +118,7 @@ export default function Comments({ carId }) {
               </div>
             </div>
 
-            <p className="bg-neutral-200 w-full p-1 rounded-md font-mono">
+            <p className="bg-neutral-200 w-full p-1 rounded-md font-light">
               {comment.comment}
             </p>
           </div>

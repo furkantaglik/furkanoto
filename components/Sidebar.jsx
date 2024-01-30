@@ -31,7 +31,7 @@ const Sidebar = ({ filters, setFilters }) => {
       <button
         onClick={() => setOpenSideMenu(!openSideMenu)}
         type="button"
-        className="inline-flex items-center z-30 fixed  p-2 mt-2 ml-3 text-sm rounded-lg md:hidden top-2 text-white hover:bg-neutral-800"
+        className="inline-flex items-center z-30 fixed  p-2  ml-3 text-sm rounded-lg md:hidden top-1 text-white hover:bg-neutral-800"
       >
         <GiHamburgerMenu className="text-2xl" />
       </button>
