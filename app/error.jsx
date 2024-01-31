@@ -1,7 +1,8 @@
 "use client";
-import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 export default function error({ error, reset }) {
+  const router = useRouter();
   return (
     <section className="max-w-screen-2xl mx-auto relative h-full">
       <img
@@ -22,12 +23,12 @@ export default function error({ error, reset }) {
         >
           Tekrar Dene
         </button>
-        <Link
-          href="/"
+        <button
+          onClick={() => router.push("/")}
           className="bg-blue-600 hover:bg-blue-700 md:px-10 px-3 py-1 ms-3"
         >
           Anasayfa
-        </Link>
+        </button>
       </div>
       <div className="absolute left-0 bottom-0 w-full h-1/4 bg-gradient-to-t from-black to-transparent"></div>
       <div className="absolute left-0 top-0 w-2/4 h-full bg-gradient-to-r from-black to-transparent"></div>

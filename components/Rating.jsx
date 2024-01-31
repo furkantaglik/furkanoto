@@ -1,11 +1,13 @@
 import { addRating, getUser } from "@/lib/actions";
 import { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
 import ReactStars from "react-rating-stars-component";
 import toast from "react-hot-toast";
 
 export default function Rating({ carId, ratingData }) {
   const [totalScore, setTotalScore] = useState(0);
   const [userScore, setUserScore] = useState(0);
+  const router = useRouter();
 
   async function sendRating(score) {
     const user = await getUser();

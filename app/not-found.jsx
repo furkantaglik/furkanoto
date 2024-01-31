@@ -1,11 +1,13 @@
-import Link from "next/link";
+"use client";
 import React from "react";
+import { useRouter } from "next/navigation";
 
 export const metadata = {
   title: "Sayfa Bulunamadı",
 };
 
 const NotFound = () => {
+  const router = useRouter();
   return (
     <section className="max-w-screen-2xl mx-auto relative h-full">
       <img
@@ -20,12 +22,12 @@ const NotFound = () => {
           Aranan sayfa maalesef bulunamadı. Bunun nedeni, hatalı veya eski bir
           URL çağırmış olmanız olabilir.{" "}
         </p>
-        <Link
-          href="/"
+        <button
+          onClick={() => router.push("/")}
           className="bg-blue-600 hover:bg-blue-700 md:px-10 px-5 py-1"
         >
           Anasayfa
-        </Link>
+        </button>
       </div>
       <div className="absolute left-0 bottom-0 w-full h-1/4 bg-gradient-to-t from-black to-transparent"></div>
       <div className="absolute left-0 top-0 w-2/4 h-full bg-gradient-to-r from-black to-transparent"></div>
