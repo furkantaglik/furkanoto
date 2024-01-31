@@ -15,7 +15,7 @@ const stripePromise = loadStripe(
   process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY
 );
 
-const DetailContainer = ({ detailinfo }) => {
+const DetailContainer = ({ detailinfo = {} }) => {
   const images = [detailinfo.image1, detailinfo.image2, detailinfo.image3];
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const router = useRouter();
@@ -166,8 +166,8 @@ const DetailContainer = ({ detailinfo }) => {
         </button>
       </div>
       <div className="md:flex justify-between">
-        <Rating carId={detailinfo.id} ratingData={detailinfo.score} />
-        <Comments carId={detailinfo.id} />
+        {/* <Rating carId={detailinfo.id} ratingData={detailinfo.score} />
+        <Comments carId={detailinfo.id} /> */}
       </div>
     </section>
   );
