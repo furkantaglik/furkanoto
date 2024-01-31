@@ -71,10 +71,10 @@ export default function Comments({ carId }) {
   return (
     <section className="mt-20 md:w-7/12  items-center border md:mx-0 mx-2">
       <h1 className="text-2xl font-semibold  text-center">Yorumlar</h1>
-      <p className="text-center mb-5 font-serif">
-        {comments?.length < 1
+      <p className="text-center mb-5 text-sm">
+        {comments
           ? "İlk yorum yapan siz olun"
-          : `${comments?.length} adet yorum`}
+          : `${comments?.length} Adet yorum`}
       </p>
       <div className="flex  mx-auto px-10">
         <input

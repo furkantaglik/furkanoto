@@ -60,7 +60,11 @@ export default function Rating({ carId }) {
       </div>
       <div className="mt-5 mx-3 text-center">
         <h2 className="font-bold">Genel Puan </h2>
-        <p className="text-xs">{scoreData.totalUser} kullanıcı değerlendirdi</p>
+        <p className="text-xs">
+          {scoreData.totalUser
+            ? `${scoreData.totalUser} kullanıcı değerlendirdi`
+            : "henüz kümse değerlendirmedi"}
+        </p>
         <ReactStars
           isHalf={true}
           classNames="flex justify-center mx-auto"
@@ -69,13 +73,6 @@ export default function Rating({ carId }) {
           size={20}
           activeColor="#0000FF"
         />
-        <p
-          className={` ${
-            scoreData.score ? "text-2xl" : "text-xs"
-          }  font-semibold underline`}
-        >
-          {scoreData.score ? scoreData.score : "Henüz Kimse Oy vermedi"}
-        </p>
       </div>
     </section>
   );
