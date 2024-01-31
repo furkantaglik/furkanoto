@@ -166,7 +166,7 @@ const DetailContainer = ({ detailinfo = {} }) => {
         </button>
       </div>
       <div className="md:flex justify-between">
-        <Rating carId={detailinfo.id} ratingData={detailinfo.score} />
+        <Rating carId={detailinfo.id} />
         <Comments carId={detailinfo.id} />
       </div>
     </section>

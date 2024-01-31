@@ -4,10 +4,10 @@ import { getAllCars } from "@/lib/actions";
 const carsData = await getAllCars();
 
 export async function generateMetadata({ params }) {
-  const carId = carsData.find((car) => car.id == params.id);
+  const detailCar = carsData.find((car) => car.id == params.id);
 
   return {
-    title: `${carId.brand} ${carId.model}`,
+    title: `${detailCar.brand} ${detailCar.model}`,
   };
 }
 

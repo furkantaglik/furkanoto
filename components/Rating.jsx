@@ -1,12 +1,14 @@
-import { addRating, getUser } from "@/lib/actions";
+"use client";
+import { addRating, getRatingByCarId, getUser } from "@/lib/actions";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import ReactStars from "react-rating-stars-component";
 import toast from "react-hot-toast";
 
-export default function Rating({ carId, ratingData }) {
-  const [totalScore, setTotalScore] = useState(0);
+export default function Rating({ carId }) {
+  const [scoreData, setScoreData] = useState({ score: 0, totalUser: 0 });
   const [userScore, setUserScore] = useState(0);
+  const [trigger, Settrigger] = useState(false);
   const router = useRouter();
 
   async function sendRating(score) {
@@ -17,24 +19,29 @@ export default function Rating({ carId, ratingData }) {
     const { id } = user;
     const result = await addRating(id, carId, score);
     result ? toast.success(result) : toast.error("Bir hata oluştu");
+    Settrigger(!trigger);
   }
 
   useEffect(() => {
     async function ratingControl() {
       const user = await getUser();
-      let totalScore = 0;
-      for (const data of ratingData) {
+      const ratingData = await getRatingByCarId(carId);
+      let total = 0;
+
+      for (const data of ratingData[0].score) {
         if (data.userId === user?.id) {
           setUserScore(data.score);
         }
-        totalScore += data.score;
+        total += data.score;
       }
-      const averageScore = totalScore / ratingData.length;
-      setTotalScore(averageScore);
+      const averageScore = total / ratingData[0].score.length;
+      setScoreData({
+        score: averageScore,
+        totalUser: ratingData[0].score.length,
+      });
     }
-
     ratingControl();
-  }, [ratingData]);
+  }, [trigger, carId]);
 
   return (
     <section className="mt-20 border md:mx-0 mx-2 md:w-4/12 h-fit pb-5 min-h-[280px]">
@@ -53,20 +60,21 @@ export default function Rating({ carId, ratingData }) {
       </div>
       <div className="mt-5 mx-3 text-center">
         <h2 className="font-bold">Genel Puan </h2>
+        <p className="text-xs">{scoreData.totalUser} kullanıcı değerlendirdi</p>
         <ReactStars
           isHalf={true}
           classNames="flex justify-center mx-auto"
           count={5}
-          value={totalScore}
+          value={scoreData.score}
           size={20}
           activeColor="#0000FF"
         />
         <p
           className={` ${
-            totalScore ? "text-2xl" : "text-xs"
+            scoreData.score ? "text-2xl" : "text-xs"
           }  font-semibold underline`}
         >
-          {totalScore ? totalScore : "Henüz Kimse Oy vermedi"}
+          {scoreData.score ? scoreData.score : "Henüz Kimse Oy vermedi"}
         </p>
       </div>
     </section>
