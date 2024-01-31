@@ -2,7 +2,7 @@
 import { addRating, getRatingByCarId, getUser } from "@/lib/actions";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
-import ReactStars from "react-rating-stars-component";
+import ReactStars from "@/lib/react-rating-stars-component";
 import toast from "react-hot-toast";
 
 export default function Rating({ carId }) {
