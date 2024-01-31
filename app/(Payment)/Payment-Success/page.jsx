@@ -29,8 +29,8 @@ export default function Confirmation() {
 
   return (
     <section className="flex flex-col justify-center items-center h-screen w-full text-white">
-      <IoShieldCheckmark className="text-teal-500 text-8xl" />
-      <div className="bg-teal-700 p-10 rounded-lg text-center">
+      <IoShieldCheckmark className="text-sky-700 text-8xl" />
+      <div className="bg-sky-700 p-10 rounded-lg text-center">
         <h1 className="text-3xl font-bold">Teşekkür Ederiz</h1>
         <p>"Satın alımınız onaylandı"</p>
         <p className="mt-10">

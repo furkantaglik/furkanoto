@@ -11,6 +11,7 @@ const Maincars = ({ carsinfo }) => {
           model={car.model}
           yakit={car.fuel}
           fiyat={car.price}
+          ratingData={car.score}
           resim1={car.image1}
           resim2={car.image2}
           resim3={car.image3}

@@ -84,6 +84,19 @@ const HighForm = ({ highData }) => {
           />
         </div>
         <div className="">
+          <label className="block mb-2 font-semibold" htmlFor="description">
+            Açıklama{" "}
+          </label>
+          <input
+            type="text"
+            name="description"
+            onChange={handleChange}
+            value={formData.description}
+            className="w-full border rounded px-2 py-1 text-black"
+            placeholder="Buraya yaz."
+          />
+        </div>
+        <div className="">
           <label className="block mb-2 font-semibold" htmlFor="url">
             Hedef Url{" "}
           </label>
@@ -106,19 +119,6 @@ const HighForm = ({ highData }) => {
             name="image"
             onChange={handleChange}
             value={formData.image}
-            className="w-full border rounded px-2 py-1 text-black"
-            placeholder="Buraya yaz."
-          />
-        </div>
-        <div className="">
-          <label className="block mb-2 font-semibold" htmlFor="description">
-            Açıklama{" "}
-          </label>
-          <input
-            type="text"
-            name="description"
-            onChange={handleChange}
-            value={formData.description}
             className="w-full border rounded px-2 py-1 text-black"
             placeholder="Buraya yaz."
           />

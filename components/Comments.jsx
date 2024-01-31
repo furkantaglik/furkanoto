@@ -69,7 +69,7 @@ export default function Comments({ carId }) {
   }, [carId]);
 
   return (
-    <section className="mt-20 max-w-screen-md  w-full   items-center border">
+    <section className="mt-20 md:w-7/12  items-center border md:mx-0 mx-2">
       <h1 className="text-2xl font-semibold  text-center">Yorumlar</h1>
       <p className="text-center mb-5 font-serif">
         {comments?.length < 1
@@ -118,7 +118,7 @@ export default function Comments({ carId }) {
               </div>
             </div>
 
-            <p className="bg-neutral-200 w-full p-1 rounded-md font-light">
+            <p className="bg-neutral-200 w-full p-1 rounded-md font-light break-words">
               {comment.comment}
             </p>
           </div>

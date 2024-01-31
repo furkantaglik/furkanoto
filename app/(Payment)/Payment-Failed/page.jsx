@@ -29,7 +29,7 @@ export default function Confirmation() {
 
   return (
     <section className="flex flex-col justify-center items-center h-screen w-full text-white">
-      <MdError className="text-red-500 text-8xl" />
+      <MdError className="text-red-700 text-8xl" />
       <div className=" bg-red-700 p-10 rounded-lg text-center">
         <h1 className="text-3xl font-bold">Üzgünüz :(</h1>
         <p>"Satın alımınız başarısız oldu"</p>

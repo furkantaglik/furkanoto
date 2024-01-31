@@ -1,13 +1,39 @@
 "use client";
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import LikeButton from "./LikeButton";
+import TotalScoreBtn from "./TotalScoreBtn";
 
-const Card = ({ id, marka, model, yakit, fiyat, resim1, resim2, resim3 }) => {
+const Card = ({
+  id,
+  marka,
+  model,
+  yakit,
+  fiyat,
+  resim1,
+  resim2,
+  resim3,
+  ratingData,
+}) => {
   const [image, setImage] = useState(resim1);
+  const [totalScore, setTotalScore] = useState(0);
+
+  useEffect(() => {
+    async function ratingControl() {
+      let totalScore = 0;
+      for (const data of ratingData) {
+        totalScore += data.score;
+      }
+      const averageScore = totalScore / ratingData.length;
+      setTotalScore(averageScore);
+    }
+
+    ratingControl();
+  }, [ratingData]);
   return (
     <section className="hover:bg-gray-100 p-5 h-fit w-fit group transition duration-100 cursor-pointer">
       <LikeButton carId={id} />
+      <TotalScoreBtn totalScore={totalScore} />
       <div className="text-center">
         <h2 className="text-md md:text-lg font-medium mb-2 font-serif">
           <span className="font-bold">{marka} </span>
@@ -24,7 +50,7 @@ const Card = ({ id, marka, model, yakit, fiyat, resim1, resim2, resim3 }) => {
           className="w-[300px] h-[150px]"
         />
       </Link>
-      <h2 className="font-medium px-6 bg-slate-900 text-white w-fit mx-auto rounded-b-full">
+      <h2 className="font-medium px-6 bg-slate-200 text-black w-fit mx-auto rounded-b-full">
         {fiyat} ₺
       </h2>
       <div className=" text-center pt-2 md:opacity-0 group-hover:opacity-100 transition duration-100">

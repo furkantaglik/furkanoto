@@ -3,7 +3,7 @@ import SearchBar from "./SearchBar";
 import Link from "next/link";
 import { BsSave2Fill } from "react-icons/bs";
 import { BiSolidPurchaseTag } from "react-icons/bi";
-import { SignedIn, SignedOut, SignInButton, UserButton } from "@clerk/nextjs";
+import { SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
 
 const Header = () => {
   return (
@@ -19,7 +19,7 @@ const Header = () => {
           className="flex flex-col items-center justify-center w-1/3 group"
         >
           <img
-            className="w-[40px] group-hover:animate-spin"
+            className="w-[40px] animate-spin"
             src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Mercedes-Logo.svg/1200px-Mercedes-Logo.svg.png"
             alt=""
           />

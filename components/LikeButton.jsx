@@ -45,7 +45,7 @@ export default function LikeButton({ carId }) {
         {isSaved ? (
           <MdFavorite className="w-5 h-5 rounded-full text-black hover:bg-black hover:text-white" />
         ) : (
-          <MdFavoriteBorder className="w-5 h-5 rounded-full  hover:bg-red-600" />
+          <MdFavoriteBorder className="w-5 h-5 rounded-full  hover:bg-blue-500" />
         )}
       </button>
     </>

@@ -9,6 +9,7 @@ import { loadStripe } from "@stripe/stripe-js";
 import Link from "next/link";
 import toast from "react-hot-toast";
 import Comments from "@/components/Comments";
+import Rating from "@/components/Rating";
 
 const stripePromise = loadStripe(
   process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY
@@ -68,7 +69,7 @@ const DetailContainer = ({ detailinfo }) => {
   };
 
   return (
-    <div className="lg:max-w-screen-xl md:max-w-screen-xs mx-auto mt-20 mb-52">
+    <section className="lg:max-w-screen-xl  mx-auto mt-10 mb-52">
       <div className="grid grid-cols-1  md:grid-cols-3 justify-center mx-auto w-fit border-b-2 border-gray-700">
         <img
           src={detailinfo.image1}
@@ -164,8 +165,11 @@ const DetailContainer = ({ detailinfo }) => {
           Satın al
         </button>
       </div>
-      <Comments carId={detailinfo.id} />
-    </div>
+      <div className="md:flex justify-between">
+        <Rating carId={detailinfo.id} ratingData={detailinfo.score} />
+        <Comments carId={detailinfo.id} />
+      </div>
+    </section>
   );
 };
 
