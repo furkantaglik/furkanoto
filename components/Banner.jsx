@@ -1,11 +1,20 @@
+import Image from "next/image";
 import Link from "next/link";
 const Banner = () => {
   return (
     <section className="max-w-screen-2xl mx-auto relative">
-      <video muted autoPlay loop>
+      <video muted autoPlay loop className="md:block hidden">
         <source src="/videos/banner.mp4" type="video/mp4" />
         Tarayıcınız video etiketini desteklemiyor.
       </video>
+
+      <Image
+        className="md:hidden"
+        width={1000}
+        height={500}
+        src="/images/banner.png"
+      />
+
       <div className="absolute md:top-40 top-5 md:left-10 left-5 text-white font-bold z-10">
         <h1 className="md:text-5xl text-2xl font-serif md:mb-10 text-blue-500">
           Yeni E Serisi

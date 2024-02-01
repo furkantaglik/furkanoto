@@ -3,6 +3,7 @@ import { BiSearchAlt2 } from "react-icons/bi";
 import { useState } from "react";
 import { getSearchResults } from "@/lib/actions";
 import Link from "next/link";
+import Image from "next/image";
 
 const SearchBar = () => {
   const [results, setResults] = useState([]);
@@ -36,8 +37,11 @@ const SearchBar = () => {
               }}
             >
               <li className="p-1 flex text-white rounded-lg bg-gradient-to-r from-gray-900 to-slate-950 hover:bg-gradient-to-r hover:from-black hover:to-blue-950 w-[400px] items-center">
-                <div className="w-[100px] relative">
-                  <img
+                <div className="relative">
+                  <Image
+                    width={100}
+                    height={50}
+                    quality={100}
                     className="rounded-md"
                     src={result.image1}
                     alt={result.model}
