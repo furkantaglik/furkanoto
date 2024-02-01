@@ -33,7 +33,7 @@ const Card = ({
   }, [ratingData]);
 
   return (
-    <section className="hover:bg-gray-100 p-5 h-fit w-fit group transition duration-100 cursor-pointer">
+    <section className="hover:bg-gray-100 p-5 h-fit w-fit mx-auto group transition duration-100 cursor-pointer">
       <LikeButton carId={id} />
       <TotalScoreBtn totalScore={totalScore} />
       <div className="text-center">
@@ -47,8 +47,8 @@ const Card = ({
       </div>
       <Link href={`/Detail/${id}`} aria-label="detail">
         <Image
-          width={300}
-          height={150}
+          width={600}
+          height={300}
           quality={75}
           src={image}
           alt={`${marka} ${model}`}
