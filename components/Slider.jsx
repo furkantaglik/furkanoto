@@ -55,7 +55,7 @@ const Slider = () => {
               key={high.id}
               className=" flex-shrink-0 w-full xs:w-1/2 xl:w-1/3 "
             >
-              <div className="border-2 border-gray-300  w-fit flex flex-col h-full xl:h-full">
+              <div className="border-2 border-gray-300 flex flex-col h-full xl:h-full">
                 <div className="h-[250px] md:h-[350px] w-full relative">
                   <Image
                     fill

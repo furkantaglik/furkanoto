@@ -70,12 +70,11 @@ const DetailContainer = ({ detailinfo = {} }) => {
 
   return (
     <section className="lg:max-w-screen-xl mx-auto  mb-52">
-      <div className="grid grid-cols-1 md:grid-cols-3 min-h-[220px] justify-center items-center mx-auto w-full border-b-2 border-gray-700">
+      <div className="grid grid-cols-1 md:grid-cols-3 min-h-[250px] justify-center items-center mx-auto w-full border-b-2 border-gray-700">
         <Image
           width={400}
           height={200}
           quality={100}
-          loading="lazy"
           src={detailinfo.image1}
           alt={(detailinfo.brand, " | ", detailinfo.model)}
           className=" hidden md:block"
@@ -84,7 +83,6 @@ const DetailContainer = ({ detailinfo = {} }) => {
           width={400}
           height={200}
           quality={100}
-          loading="lazy"
           src={detailinfo.image2}
           alt={(detailinfo.brand, " | ", detailinfo.model)}
           className=" hidden md:block"
@@ -93,7 +91,6 @@ const DetailContainer = ({ detailinfo = {} }) => {
           width={400}
           height={200}
           quality={100}
-          loading="lazy"
           src={detailinfo.image3}
           alt={(detailinfo.brand, " | ", detailinfo.model)}
           className=" hidden md:block"
@@ -105,7 +102,6 @@ const DetailContainer = ({ detailinfo = {} }) => {
           width={400}
           height={200}
           quality={100}
-          loading="lazy"
           className=" mx-auto md:hidden"
         />
       </div>

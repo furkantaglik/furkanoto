@@ -53,7 +53,6 @@ const Card = ({
           src={image}
           alt={`${marka} ${model}`}
           loading="lazy"
-          className="w-[300px] h-[150px]"
         />
       </Link>
       <h2 className="font-medium px-6 bg-slate-200 text-black w-fit mx-auto rounded-b-full">

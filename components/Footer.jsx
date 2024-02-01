@@ -6,7 +6,7 @@ const Footer = () => {
   }
 
   return (
-    <footer className="bg-black max-w-screen-2xl mx-auto">
+    <footer className="bg-black max-w-screen-2xl mx-auto break-words">
       <div className="flex justify-center p-5">
         <button
           onClick={handleClick}

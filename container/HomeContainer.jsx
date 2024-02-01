@@ -71,7 +71,7 @@ const HomeContainer = ({ homeinfo }) => {
           </p>
         </div>
       </div>
-      <div className="flex max-w-screen-2xl mx-auto gap-x-3">
+      <div className="flex max-w-screen-2xl mx-auto gap-x-3 me-3">
         <Sidebar filters={filters} setFilters={setFilters} />
         <Maincars carsinfo={filteredCars} />
       </div>
