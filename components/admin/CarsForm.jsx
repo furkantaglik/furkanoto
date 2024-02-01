@@ -4,6 +4,7 @@ import { addCar, deleteCar, updateCar } from "@/lib/actions";
 import { formatDate } from "@/lib/helpers";
 import Link from "next/link";
 import toast from "react-hot-toast";
+import Image from "next/image";
 
 const CarsForm = ({ carsData }) => {
   const [openSideBar, setOpenSideBar] = useState(false);
@@ -118,7 +119,12 @@ const CarsForm = ({ carsData }) => {
                     <span className="ml-3 ">
                       {car.brand}: {car.model}
                     </span>
-                    <img src={car.image1} className="w-[100px]" alt="" />
+                    <Image
+                      width={100}
+                      height={50}
+                      src={car.image1}
+                      className="w-[100px]"
+                    />
                   </button>
                 </li>
               ))}

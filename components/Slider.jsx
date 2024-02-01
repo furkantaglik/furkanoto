@@ -3,6 +3,7 @@ import { AiOutlineArrowRight, AiOutlineArrowLeft } from "react-icons/ai";
 import { useEffect, useRef, useState } from "react";
 import { getAllHighlights } from "@/lib/actions";
 import Link from "next/link";
+import Image from "next/image";
 
 const Slider = () => {
   const [highlights, setHighlights] = useState([]);
@@ -54,12 +55,16 @@ const Slider = () => {
               key={high.id}
               className=" flex-shrink-0 w-full xs:w-1/2 xl:w-1/3 "
             >
-              <div className="border-2 border-gray-300 w-fit  flex flex-col h-full xl:h-full">
-                <img
-                  src={high.image}
-                  alt={high.title}
-                  className="h-[250px] md:h-[350px]"
-                />
+              <div className="border-2 border-gray-300  w-fit flex flex-col h-full xl:h-full">
+                <div className="h-[250px] md:h-[350px] w-full relative">
+                  <Image
+                    fill
+                    loading="lazy"
+                    quality={100}
+                    src={high.image}
+                    alt={high.title}
+                  />
+                </div>
                 <h1 className="md:text-xl text-lg font-bold mb-2 text-center ">
                   {high.title}
                 </h1>
@@ -101,11 +106,14 @@ const Slider = () => {
               id={high.title}
               key={index + 1}
               onClick={() => previewImage(index)}
-              className={`w-10 rounded-full mx-2  ${
+              className={`w-8 h-8 rounded-full mx-2  relative ${
                 index === currentImageIndex ? "scale-125" : "bg-gray-300"
               }`}
             >
-              <img
+              <Image
+                fill
+                loading="lazy"
+                quality={10}
                 src={high.image}
                 alt={high.title}
                 className="rounded-full "

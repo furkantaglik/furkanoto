@@ -10,9 +10,6 @@ const AdminPage = async () => {
   return (
     <>
       <CarsForm carsData={carsData} />
-      {/* <div className="h-screen flex justify-center items-center">
-        <h1>Doğrulanıyor Lütfen Bekleyin...</h1>
-      </div> */}
     </>
   );
 };

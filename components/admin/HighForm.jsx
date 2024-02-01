@@ -3,6 +3,7 @@ import { useState } from "react";
 import { addHighlight, deleteHighlight, updateHighlight } from "@/lib/actions";
 import Link from "next/link";
 import toast from "react-hot-toast";
+import Image from "next/image";
 
 const HighForm = ({ highData }) => {
   const [formData, setFormData] = useState({
@@ -138,7 +139,12 @@ const HighForm = ({ highData }) => {
               >
                 Düzenle
               </button>
-              <img src={high.image} alt={high.title} />
+              <Image
+                width={400}
+                height={400}
+                src={high.image}
+                alt={high.title}
+              />
               <div className="border-4 p-3">
                 <h1 className="text-xl font-bold mb-2">{high.title}</h1>
                 <p className="font-lg">{high.description}</p>

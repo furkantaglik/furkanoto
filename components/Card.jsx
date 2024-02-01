@@ -3,6 +3,7 @@ import Link from "next/link";
 import { useState, useEffect } from "react";
 import LikeButton from "./LikeButton";
 import TotalScoreBtn from "./TotalScoreBtn";
+import Image from "next/image";
 
 const Card = ({
   id,
@@ -30,6 +31,7 @@ const Card = ({
 
     ratingControl();
   }, [ratingData]);
+
   return (
     <section className="hover:bg-gray-100 p-5 h-fit w-fit group transition duration-100 cursor-pointer">
       <LikeButton carId={id} />
@@ -44,9 +46,13 @@ const Card = ({
         </span>
       </div>
       <Link href={`/Detail/${id}`} aria-label="detail">
-        <img
+        <Image
+          width={300}
+          height={150}
+          quality={75}
           src={image}
           alt={`${marka} ${model}`}
+          loading="lazy"
           className="w-[300px] h-[150px]"
         />
       </Link>

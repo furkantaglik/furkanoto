@@ -10,6 +10,7 @@ import Link from "next/link";
 import toast from "react-hot-toast";
 import Comments from "@/components/Comments";
 import Rating from "@/components/Rating";
+import Image from "next/image";
 
 const stripePromise = loadStripe(
   process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY
@@ -63,37 +64,52 @@ const DetailContainer = ({ detailinfo = {} }) => {
       const data = await response.json();
       router.push(data.url);
     } catch (error) {
-      // console.error("Payment error:", error);
       toast.error("Beklenmedik bir hata meydana geldi");
     }
   };
 
   return (
-    <section className="lg:max-w-screen-xl  mx-auto mt-10 mb-52">
-      <div className="grid grid-cols-1  md:grid-cols-3 justify-center mx-auto w-fit border-b-2 border-gray-700">
-        <img
+    <section className="lg:max-w-screen-xl mx-auto  mb-52">
+      <div className="grid grid-cols-1 md:grid-cols-3 min-h-[220px] justify-center items-center mx-auto w-full border-b-2 border-gray-700">
+        <Image
+          width={400}
+          height={200}
+          quality={100}
+          loading="lazy"
           src={detailinfo.image1}
           alt={(detailinfo.brand, " | ", detailinfo.model)}
-          className="md:w-[400px]  h-[200px] hidden md:block"
+          className=" hidden md:block"
         />
-        <img
+        <Image
+          width={400}
+          height={200}
+          quality={100}
+          loading="lazy"
           src={detailinfo.image2}
           alt={(detailinfo.brand, " | ", detailinfo.model)}
-          className="md:w-[400px]  h-[200px]  hidden md:block"
+          className=" hidden md:block"
         />
-        <img
+        <Image
+          width={400}
+          height={200}
+          quality={100}
+          loading="lazy"
           src={detailinfo.image3}
           alt={(detailinfo.brand, " | ", detailinfo.model)}
-          className="md:w-[400px]  h-[200px] hidden md:block"
+          className=" hidden md:block"
         />
-        {/* Mobil resim  */}
-        <img
+        {/* Mobil resim */}
+        <Image
           src={images[currentImageIndex]}
           alt={(detailinfo.brand, " | ", detailinfo.model)}
-          className="md:w-[400px]  h-[200px]  md:hidden"
+          width={400}
+          height={200}
+          quality={100}
+          loading="lazy"
+          className=" mx-auto md:hidden"
         />
       </div>
-      <div className="flex justify-between mx-4 md:hidden">
+      <div className="flex justify-between mx-4 md:hidden ">
         <button
           className="font-semibold text-xl rounded-full bg-gray-200 p-2 hover:bg-gray-300"
           onClick={previousImage}
@@ -166,8 +182,8 @@ const DetailContainer = ({ detailinfo = {} }) => {
         </button>
       </div>
       <div className="md:flex justify-between">
-        <Rating carId={detailinfo.id} />
         <Comments carId={detailinfo.id} />
+        <Rating carId={detailinfo.id} />
       </div>
     </section>
   );
