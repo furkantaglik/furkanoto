@@ -47,8 +47,8 @@ const Card = ({
       </div>
       <Link href={`/Detail/${id}`} aria-label="detail">
         <Image
-          width={600}
-          height={300}
+          width={300}
+          height={150}
           quality={75}
           src={image}
           alt={`${marka} ${model}`}
