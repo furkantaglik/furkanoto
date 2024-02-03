@@ -10,6 +10,7 @@ const Banner = () => {
 
       <Image
         className="md:hidden"
+        quality={100}
         width={1000}
         height={500}
         src="/images/banner.png"

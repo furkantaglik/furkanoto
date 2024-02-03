@@ -36,12 +36,11 @@ const SearchBar = () => {
                 setResults([]);
               }}
             >
-              <li className="p-1 flex text-white rounded-lg bg-gradient-to-r from-gray-900 to-slate-950 hover:bg-gradient-to-r hover:from-black hover:to-blue-950 w-[400px] items-center">
+              <li className="p-1 flex text-white min-h-[50px] rounded-lg bg-gradient-to-r from-gray-900 to-slate-950 hover:bg-gradient-to-r hover:from-black hover:to-blue-950 w-[400px] items-center">
                 <div className="relative">
                   <Image
                     width={100}
                     height={50}
-                    quality={100}
                     className="rounded-md"
                     src={result.image1}
                     alt={result.model}

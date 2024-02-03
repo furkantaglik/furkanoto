@@ -147,56 +147,7 @@ const Sidebar = ({ filters, setFilters }) => {
               </Accordion>
             </li>
             <li>
-              <Accordion title="Yakıt Türü">
-                <div className="grid grid-cols-2 justify-between w-1/3 items-center ">
-                  <input
-                    onChange={() => handleCheckboxChange("fuel", "Benzin")}
-                    checked={filters.fuel.includes("Benzin")}
-                    id="benzin"
-                    type="checkbox"
-                    className="w-6 h-6 "
-                  />
-                  <label htmlFor="benzin" className="ml-3 w-full py-3">
-                    Benzin
-                  </label>
-
-                  <input
-                    onChange={() => handleCheckboxChange("fuel", "Dizel")}
-                    checked={filters.fuel.includes("Dizel")}
-                    id="dizel"
-                    type="checkbox"
-                    className="w-6 h-6 "
-                  />
-                  <label htmlFor="dizel" className="ml-3 w-full py-3">
-                    Dizel
-                  </label>
-
-                  <input
-                    onChange={() => handleCheckboxChange("fuel", "Elektrik")}
-                    checked={filters.fuel.includes("Elektrik")}
-                    id="elektrik"
-                    type="checkbox"
-                    className="w-6 h-6 "
-                  />
-                  <label htmlFor="elektrik" className="ml-3 w-full py-3">
-                    Elektrik
-                  </label>
-
-                  <input
-                    onChange={() => handleCheckboxChange("fuel", "Hibrit")}
-                    checked={filters.fuel.includes("Hibrit")}
-                    id="hibrit"
-                    type="checkbox"
-                    className="w-6 h-6 "
-                  />
-                  <label htmlFor="hibrit" className="ml-3 w-full py-3">
-                    Hibrit
-                  </label>
-                </div>
-              </Accordion>
-            </li>
-            <li>
-              <Accordion title="Gövde Türü">
+              <Accordion title="Gövde Tercihi">
                 <div className="grid grid-cols-2 justify-between w-1/3 items-center ">
                   <input
                     onChange={() => handleCheckboxChange("body", "Hatchback")}
@@ -256,7 +207,56 @@ const Sidebar = ({ filters, setFilters }) => {
               </Accordion>
             </li>
             <li>
-              <Accordion title="Vites Türü">
+              <Accordion title="Yakıt Tercihi">
+                <div className="grid grid-cols-2 justify-between w-1/3 items-center ">
+                  <input
+                    onChange={() => handleCheckboxChange("fuel", "Benzin")}
+                    checked={filters.fuel.includes("Benzin")}
+                    id="benzin"
+                    type="checkbox"
+                    className="w-6 h-6 "
+                  />
+                  <label htmlFor="benzin" className="ml-3 w-full py-3">
+                    Benzin
+                  </label>
+
+                  <input
+                    onChange={() => handleCheckboxChange("fuel", "Dizel")}
+                    checked={filters.fuel.includes("Dizel")}
+                    id="dizel"
+                    type="checkbox"
+                    className="w-6 h-6 "
+                  />
+                  <label htmlFor="dizel" className="ml-3 w-full py-3">
+                    Dizel
+                  </label>
+
+                  <input
+                    onChange={() => handleCheckboxChange("fuel", "Elektrik")}
+                    checked={filters.fuel.includes("Elektrik")}
+                    id="elektrik"
+                    type="checkbox"
+                    className="w-6 h-6 "
+                  />
+                  <label htmlFor="elektrik" className="ml-3 w-full py-3">
+                    Elektrik
+                  </label>
+
+                  <input
+                    onChange={() => handleCheckboxChange("fuel", "Hibrit")}
+                    checked={filters.fuel.includes("Hibrit")}
+                    id="hibrit"
+                    type="checkbox"
+                    className="w-6 h-6 "
+                  />
+                  <label htmlFor="hibrit" className="ml-3 w-full py-3">
+                    Hibrit
+                  </label>
+                </div>
+              </Accordion>
+            </li>
+            <li>
+              <Accordion title="Vites Tercihi">
                 <div className="grid grid-cols-2 justify-between w-1/3 items-center ">
                   <input
                     onChange={() => handleCheckboxChange("gear", "Otomatik")}
@@ -283,7 +283,7 @@ const Sidebar = ({ filters, setFilters }) => {
               </Accordion>
             </li>
             <li>
-              <Accordion title="Renk Seçimi">
+              <Accordion title="Renk Tercihi">
                 <div className="grid grid-cols-2 justify-between w-1/3 items-center whitespace-nowrap ">
                   <input
                     onChange={() => handleCheckboxChange("color", "Siyah")}
@@ -372,7 +372,36 @@ const Sidebar = ({ filters, setFilters }) => {
               </Accordion>
             </li>
             <li>
-              <Accordion title="Hız">
+              <Accordion title="Fiyat Aralığı">
+                <div className="grid grid-cols-3 gap-x-2 text-center w-full p-1 items-center ">
+                  <input
+                    onChange={(e) =>
+                      handleCheckboxChange(
+                        "minprice",
+                        parseFloat(e.target.value)
+                      )
+                    }
+                    type="number"
+                    className="w-full  p-1"
+                    placeholder="0 TL"
+                  />
+                  <span>-</span>
+                  <input
+                    onChange={(e) =>
+                      handleCheckboxChange(
+                        "maxprice",
+                        parseFloat(e.target.value)
+                      )
+                    }
+                    type="number"
+                    className="w-full  p-1"
+                    placeholder="100 TL"
+                  />
+                </div>
+              </Accordion>
+            </li>
+            <li>
+              <Accordion title="Hız Aralığı">
                 <div className="grid grid-cols-2 justify-between w-1/3 items-center whitespace-nowrap ">
                   <input
                     onChange={() =>
@@ -427,35 +456,6 @@ const Sidebar = ({ filters, setFilters }) => {
                     type="number"
                     className=" p-1"
                     placeholder="2020"
-                  />
-                </div>
-              </Accordion>
-            </li>
-            <li>
-              <Accordion title="Fiyat Aralığı">
-                <div className="grid grid-cols-3 gap-x-2 text-center w-full p-1 items-center ">
-                  <input
-                    onChange={(e) =>
-                      handleCheckboxChange(
-                        "minprice",
-                        parseFloat(e.target.value)
-                      )
-                    }
-                    type="number"
-                    className="w-full  p-1"
-                    placeholder="0 TL"
-                  />
-                  <span>-</span>
-                  <input
-                    onChange={(e) =>
-                      handleCheckboxChange(
-                        "maxprice",
-                        parseFloat(e.target.value)
-                      )
-                    }
-                    type="number"
-                    className="w-full  p-1"
-                    placeholder="100 TL"
                   />
                 </div>
               </Accordion>

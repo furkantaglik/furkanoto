@@ -63,15 +63,15 @@ const HomeContainer = ({ homeinfo }) => {
     <section className="mb-52">
       <Banner />
       <Slider />
-      <div className="max-w-screen-2xl mx-auto w-full mb-16">
+      <div className="max-w-screen-2xl mx-auto w-full  my-10">
         <div className="relative md:mx-20 mx-2">
           <h1 className="md:text-3xl text-xl font-bold">Araçlar</h1>
-          <p className=" border-b-4 border-blue-800 text-lg">
+          <p className=" border-b-4 border-blue-800 text-sm">
             {filteredCars.length} sonuç Bulundu
           </p>
         </div>
       </div>
-      <div className="flex max-w-screen-2xl mx-auto gap-x-3 me-3">
+      <div className="flex max-w-screen-2xl mx-auto gap-x-3">
         <Sidebar filters={filters} setFilters={setFilters} />
         <Maincars carsinfo={filteredCars} />
       </div>

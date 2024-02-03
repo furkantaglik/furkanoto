@@ -41,13 +41,13 @@ const Slider = () => {
     });
   };
   return (
-    <section className="max-w-screen-2xl mx-auto w-full mb-16 min-h-[600px]">
+    <section className="max-w-screen-2xl mx-auto w-full">
       <div className="relative md:mx-20 mx-2">
-        <h1 className="md:text-3xl text-xl font-bold md:my-12 my-8 border-b-4 border-blue-800">
+        <h1 className="md:text-3xl text-xl font-bold my-10 border-b-4 border-blue-800">
           Öne Çıkanlar
         </h1>
         <div
-          className="flex md:overflow-hidden overflow-y-auto md:gap-x-5 gap-x-2 pb-3"
+          className="flex md:overflow-hidden overflow-y-auto md:gap-x-5 gap-x-2 pb-3 min-h-[600px]"
           ref={contentRef}
         >
           {highlights?.map((high, index) => (
