@@ -47,7 +47,7 @@ export default function Rating({ carId }) {
     <section className="mt-20 border md:mx-0 mx-2 md:w-4/12 h-fit pb-5 min-h-[280px]">
       <h1 className="text-2xl font-semibold  text-center mb-5">Değerlendir</h1>
       <p className="text-center text-sm font-bold">Sizin Puanınız</p>
-      <div className="flex justify-center text-center ">
+      <div className="flex justify-center text-center h-[55px]">
         <ReactStars
           count={5}
           value={userScore}
@@ -59,7 +59,7 @@ export default function Rating({ carId }) {
         />
       </div>
       <div className="mt-5 mx-3 text-center">
-        <h2 className="font-bold">Genel Puan </h2>
+        <h2 className="font-bold">Genel Puan: {scoreData.score} </h2>
         <p className="text-xs">
           {scoreData.totalUser
             ? `${scoreData.totalUser} kullanıcı değerlendirdi`
