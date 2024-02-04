@@ -1,7 +1,10 @@
 # Furkan Otmotiv
 
-Kullanıcıların kaydolarak istediği araçları filtreleyip inceleyebildiği
-favorilere ekleyebildiği satın alabildiği bir satılık araç sitesi
+Kullanıcıların siteye giriş yaparak araçlar içerisinden filtreleme ve arama yaparak istediği ilanları bulup isterse satın alıp istersede favorilere ekleyerek kullandığı bir web sitesi projesidir
+
+# Teknolojiler
+
+React,Next.js,PostegreSql,Prisma,Stripe,Api,TailwindCss,Clerk Auth
 
 # Görseller
 
