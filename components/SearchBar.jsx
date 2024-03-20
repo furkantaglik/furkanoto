@@ -1,22 +1,29 @@
 "use client";
 import { BiSearchAlt2 } from "react-icons/bi";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { getSearchResults } from "@/lib/actions";
 import Link from "next/link";
 import Image from "next/image";
 
 const SearchBar = () => {
   const [results, setResults] = useState([]);
+  const [value, setValue] = useState();
 
-  const handlechange = async (value) => {
-    setResults(await getSearchResults(value));
-  };
+  useEffect(() => {
+    const timeout = setTimeout(async () => {
+      setResults(await getSearchResults(value));
+    }, 200);
+
+    return () => {
+      clearTimeout(timeout);
+    };
+  }, [value]);
 
   return (
     <section className="relative">
       <div className="group">
         <input
-          onChange={(e) => handlechange(e.target.value)}
+          onChange={(e) => setValue(e.target.value)}
           type="text"
           placeholder="Otomotiv Ara."
           className="bg-slate-900 rounded-md p-2 text-white outline-none focus:shadow-lg  focus:shadow-blue-900 w-full"
