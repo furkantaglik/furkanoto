@@ -34,7 +34,11 @@ export default function Rating({ carId }) {
         }
         total += data.score;
       }
-      const averageScore = total / ratingData[0].score.length;
+      const averageScore =
+        ratingData[0].score.length === 0
+          ? total / total
+          : total / ratingData[0].score.length;
+
       setScoreData({
         score: averageScore,
         totalUser: ratingData[0].score.length,
@@ -59,11 +63,11 @@ export default function Rating({ carId }) {
         />
       </div>
       <div className="mt-5 mx-3 text-center">
-        <h2 className="font-bold">Genel Puan: {scoreData.score} </h2>
+        <h2 className="font-bold">Genel Puan: {scoreData.score.toFixed(1)}</h2>
         <p className="text-xs">
           {scoreData.totalUser
             ? `${scoreData.totalUser} kullanıcı değerlendirdi`
-            : "henüz kümse değerlendirmedi"}
+            : "Henüz kimse değerlendirmedi"}
         </p>
         <ReactStars
           isHalf={true}
