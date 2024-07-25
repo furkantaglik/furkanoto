@@ -1,4 +1,4 @@
 ## Furkan Otomotiv
 
-![Örnek Resim](/images/example1.png)
-![Örnek Resim](/images/example2.png)
+![Örnek Resim](public/images/example1.png)
+![Örnek Resim](public/images/example2.png)
