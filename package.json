@@ -4,29 +4,29 @@
   "private": true,
   "scripts": {
     "postinstall": "prisma generate",
-    "dev": "next dev",
+    "dev": "next dev ",
     "build": "prisma generate && next build",
     "start": "next start",
     "lint": "next lint"
   },
   "dependencies": {
-    "@clerk/nextjs": "^4.29.12",
-    "@clerk/themes": "^1.7.12",
-    "@prisma/client": "^5.12.1",
-    "@stripe/react-stripe-js": "^2.7.0",
+    "@clerk/nextjs": "^4.31.3",
+    "@clerk/themes": "^1.7.17",
+    "@prisma/client": "^5.17.0",
+    "@stripe/react-stripe-js": "^2.7.3",
     "@stripe/stripe-js": "^2.4.0",
-    "next": "^14.2.1",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
+    "next": "^14.2.5",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
     "react-hot-toast": "^2.4.1",
     "react-icons": "^4.12.0",
-    "sharp": "^0.33.3",
+    "sharp": "^0.33.4",
     "stripe": "^14.25.0"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.19",
-    "postcss": "^8.4.38",
-    "prisma": "^5.12.1",
-    "tailwindcss": "^3.4.3"
+    "postcss": "^8.4.40",
+    "prisma": "^5.17.0",
+    "tailwindcss": "^3.4.6"
   }
 }
